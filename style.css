@@ -65,7 +65,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: 400px;
+	max-width: 350px;
 }
 
 .activities-image-size {
@@ -139,9 +139,11 @@ body {
 	}
 }
 
-@media (max-width: 768px) {}
+@media (max-width: 480px) {
+	#header-container {
+		padding: 0 5px;
+	}
 
-@media (max-width: 500px) {
 	.activities-guide-text-utility {
 		font-size: 0.75rem;
 	}
