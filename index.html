@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="style.css">
+		<title>Password Generator</title>
+	</head>
+
+	<body>
+		<main id="main-container">
+			<header id="header-container">
+				<h1><span id="white-header" class="style-header">Generate a</span> <span id="green-header">random password</span></h1>
+				<p id="supporting-text" class="text-design">Never use an insecure password again.</p>
+				<p id="supporting-text" class="text-design">Click to copy to clipboard!</p>
+			</header>
+			
+			<section id="form-container">
+				<form id="password-form" action="#">
+					<div class="padding-form">
+						<label for="password-length-input" class="text-design">Length</label>
+						<input type="number" id="password-length-input" name="password-length-input">
+						<small id="error-message"></small>
+					</div>
+					
+					<div class="padding-form">
+					
+						<div class="checkbox-div">
+							<input type="checkbox" id="toggle-symbols" class="checkbox-design">
+							<label for="toggle-symbols" class="text-design">Exclude Symbols</label>
+						</div>
+						
+						<div class="checkbox-div">
+							<input type="checkbox" id="toggle-numbers" class="checkbox-design">
+							<label for="toggle-numbers" class="text-design">Exclude Numbers</label>
+						</div>
+					</div>
+					
+					<div class="padding-form">
+						<button id="generate-button">Generate passwords</button>
+					</div>
+				</form>
+			</section>
+			
+			<section id="password-container">
+				<div id="password-one" data-hover="" class="password-div"></div>
+				<div id="password-two" data-hover="" class="password-div"></div>
+			</section>
+		</main>
+		<script src="app.js"></script>
+	</body>
+
+</html>
+
