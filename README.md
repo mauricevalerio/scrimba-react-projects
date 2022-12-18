@@ -1,2 +1,2 @@
 # hometown-page
- Hometown page HTML & CSS
+ Scrimba Hometown page HTML & CSS
