@@ -1,7 +1,9 @@
 # password-generator
  Scrimba password generator HTML, CSS, JS
- 
+ 	[title](https://moonlit-semolina-d1a33e.netlify.app/)
   ## Added the following features
- - Copy to clipboard
- - Exclude numbers and/or special characters when generating passwords
- - Requires password length input
+  - Added copy to clipboard functionality
+  - Added the option to filter numbers and/or special characters
+  - Added validation that number input must be entered
+  - Made it responsive
+
