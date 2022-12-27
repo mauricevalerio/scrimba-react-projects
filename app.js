@@ -16,7 +16,12 @@ const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 const timerText = document.getElementById("timer-text");
 const formTimerErrorMsg = document.getElementById("form-timer-error-msg");
+const displayWinner = document.getElementById("display-winner");
+const buttonPauseTime = document.getElementById("pause-time");
+const buttonResumeTime = document.getElementById("resume-time");
 
+buttonPauseTime.disabled = true;
+buttonResumeTime.disabled = true;
 buttonStartGame.disabled = true;
 function toggleScoreButtons(toggle) { //loops over score buttons to disable/enable them
 	for (let btn of buttonsScore) {
@@ -26,7 +31,7 @@ function toggleScoreButtons(toggle) { //loops over score buttons to disable/enab
 
 toggleScoreButtons(true); //disables score buttons on initialization
 
-const gameDuration = { //object for gameDuration including minutes, seconds, quarter
+const gameDuration = { //object for gameDuration
 	minutes: 0,
 	seconds: 0,
 	time: 0, //variable for storing id of setinterval so that clearInterval can be used
@@ -51,7 +56,16 @@ const gameDuration = { //object for gameDuration including minutes, seconds, qua
 			} else { //if minutes and seconds are zero
 				clearInterval(this.time);
 				buttonSetTimer.disabled = false;
+				buttonPauseTime.disabled = true;
+				buttonResumeTime.disabled = true;
 				toggleScoreButtons(true);
+				if (homeTeam.score === guestTeam.score) {
+					displayWinner.textContent = "Score tied. No Winner!"
+				} else if (homeTeam.score > guestTeam.score) {
+					displayWinner.textContent = "Home team won!";
+				} else {
+					displayWinner.textContent = "Guest team won!";
+				}
 			}
 		}, 1000) //interval runs every 1 second
 	}
@@ -104,6 +118,7 @@ buttonStartGame.addEventListener("click", (e) => {
 	toggleScoreButtons(false); //enable score buttons
 	gameDuration.setTime();
 	gameDuration.startTimer();
+	displayWinner.textContent = "";
 	buttonSetTimer.disabled = true;
 	buttonStartGame.disabled = true;
 });
@@ -122,6 +137,8 @@ buttonSubmitTimer.addEventListener("click", (e) => {
 		document.getElementById("set-timer-form").style.display = "none";
 		timerText.textContent = `${gameDuration.padTimer(minutes.value)}:${gameDuration.padTimer(seconds.value)}`;
 		buttonStartGame.disabled = false;
+		buttonPauseTime.disabled = false;
+		buttonResumeTime.disabled = false;
 	} else {
 		return;
 	}
@@ -137,4 +154,13 @@ buttonResetScore.addEventListener("click", (e) => {
 	homeTeam.homeScore.textContent = homeTeam.score;
 	guestTeam.guestScore.textContent = guestTeam.score;
 	highlightScoreLeader(homeTeam, guestTeam);
+	displayWinner.textContent = "";
+})
+
+buttonPauseTime.addEventListener("click", (e) => {
+	clearInterval(gameDuration.time);
+})
+
+buttonResumeTime.addEventListener("click", (e) => {
+	gameDuration.startTimer();
 })

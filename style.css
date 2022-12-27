@@ -26,9 +26,17 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 10px;
 	justify-content: space-between;
 	font-family: 'Cursed Timer ULiL', sans-serif;
 	color: #EEEEEE;
+}
+
+.game-buttons-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	gap: 10px;
 }
 
 #scoreboard-container {
@@ -89,7 +97,9 @@ body {
 	font-size: 2rem;
 }
 
-.header-text {
+.header-text,
+#header-container h6,
+#display-winner {
 	color: #EEEEEE;
 	font-family: 'Verdana';
 }

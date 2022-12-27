@@ -15,13 +15,16 @@
 		<main id="main-container">
 			<header id="header-container">
 				<h4 id="timer-text">00:00</h4>
-				<h6>Timer must be set to start the game</h6>
-				<h6>Maximum time is 12 minutes</h6>
-				<div>
+				<h6>Timer must be set to start the game.</h6>
+				<h6>Maximum time is 12 minutes.</h6>
+				<div class="game-buttons-container">
 					<button id="set-timer" class="button-design">Set Timer</button>
 					<button id="new-game" class="button-design">Start Game</button>
+					<button id="pause-time" class="button-design">Pause Time</button>
+					<button id="resume-time" class="button-design">Resume Time</button>
 					<button id="reset-score" class="button-design">Reset Score</button>
 				</div>
+				<p id="display-winner"></p>
 				<form action="/" id="set-timer-form" class="form-popup">
 					
 					<label for="minutes">Minutes</label>
