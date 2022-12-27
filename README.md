@@ -1,7 +1,7 @@
 # password-generator
  Scrimba password generator HTML, CSS, JS
  	
-  [title](https://moonlit-semolina-d1a33e.netlify.app/)
+  [Password Generator](https://moonlit-semolina-d1a33e.netlify.app/)
   
   ## Added the following features
   - Added copy to clipboard functionality
