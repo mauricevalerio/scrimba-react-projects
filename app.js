@@ -1,5 +1,4 @@
 const mainContainer = document.getElementById("main-container");
-let isLiked = false;
 
 const classAttribute = {
     classHeaderPost: "header-post-container",
@@ -29,8 +28,9 @@ const postData = [
         name: "Vincent van Gogh",
         location: "Zudert, Netherlands",
         imagePost: "images/post-vangogh.jpg",
+        isPostLiked: false,
         altPost: "Van Gogh Image Post",
-        likes: 21,
+        likes: 20,
         captionsInfo: {
             username: "vincey1853",
             captionsText: " just took a few mushrooms lol"
@@ -42,8 +42,9 @@ const postData = [
         name: "Gustave Courbet",
         location: "Ornans, France",
         imagePost: "images/post-courbet.jpg",
+        isPostLiked: false,
         altPost: "Gustave Courbet Image Post",
-        likes: 4,
+        likes: 5,
         captionsInfo: {
             username: "gus1819",
             captionsText: " i'm feelin a bit stressed tbh"
@@ -55,8 +56,9 @@ const postData = [
         name: "Joseph Ducreux",
         location: "Paris, France",
         imagePost: "images/post-ducreux.jpg",
+        isPostLiked: false,
         altPost: "Joseph Ducreux Image Post",
-        likes: 152,
+        likes: 150,
         captionsInfo: {
             username: "jd1735",
             captionsText: " gm friends! which coin are YOU stacking up today?? post below and WAGMI!"
@@ -134,12 +136,12 @@ function createImagePost(i) {
     setAttributes(imgPost, { "src": postData[i].imagePost, "alt": postData[i].altPost, "class": classAttribute.classImagePost })
 
     imgPost.addEventListener("dblclick", e => {
-        if (!isLiked) {
+        if (!postData[i].isPostLiked) {
             postData[i].likes += 1;
-            isLiked = true;
+            postData[i].isPostLiked = true;
         } else {
             postData[i].likes -= 1;
-            isLiked = false;
+            postData[i].isPostLiked = false;
         }
         renderPosts();
     });
@@ -157,19 +159,19 @@ function createIconsContainer(i) {
 
     setAttributes(imgHeart, { "src": iconImages.iconHeart, "alt": iconImages.altHeart, "class": classAttribute.classIcons });
 
-    if (isLiked) {
+    if (postData[i].isPostLiked) {
         imgHeart.classList.add("liked");
     } else {
         imgHeart.classList.remove("liked");
     }
 
     imgHeart.addEventListener("click", e => {
-        if (!isLiked) {
+        if (!postData[i].isPostLiked) {
             postData[i].likes += 1;
-            isLiked = true;
+            postData[i].isPostLiked = true;
         } else {
             postData[i].likes -= 1;
-            isLiked = false;
+            postData[i].isPostLiked = false;
         }
         renderPosts();
     })
