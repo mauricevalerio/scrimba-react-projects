@@ -1,5 +1,6 @@
 # oldagram
 Scrimba oldagram HTML, CSS, JS
+
 **NOTE: I did not use innerHTML as it is not advisable and as much as possible would like to follow best practices online**
 
 
