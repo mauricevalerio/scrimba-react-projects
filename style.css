@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #f5f5f5;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* CONTAINERS */
+.header-container,
+.main-container {
+	margin: 0 auto;
+	max-width: 400px;
+	background: #FFFFFF;
+}
+
+.header-container {
+	padding: 16px;
+	border-bottom: 1px solid #C6C6C6;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	border-bottom: 3px solid #C6C6C6;
+}
+
+.post:last-child {
+	margin-bottom: none;
+}
+
+.header-post-container,
+.icons-container,
+.likes-captions-container {
+	display: flex;
+	padding: 10px;
+	gap: 10px;
+}
+
+.name-location-container {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.likes-captions-container {
+	flex-direction: column;
+	padding-top: 0;
+}
+
+
+/* IMAGES */
+.logo {
+	max-width: 127px;
+}
+
+.avatar {
+	max-width: 34px;
+	max-height: 34px;
+	border-radius: 20px;
+}
+
+.image-post {
+	max-width: 100%;
+	cursor: pointer;
+}
+
+.icons {
+	max-width: 24px;
+}
+
+.icons:hover {
+	filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7269%) hue-rotate(23deg) brightness(95%) contrast(107%);
+	cursor: pointer;
+}
+
+.liked {
+	filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(7269%) hue-rotate(23deg) brightness(95%) contrast(107%);
+}
+
+/* TYPOGRAPHY */
+.name,
+.likes,
+.username,
+.captions-info {
+	font-weight: 700;
+	font-size: 0.813rem;
+}
+
+.location,
+.captions-info {
+	font-weight: 400;
+}
+
+.location {
+	font-size: 0.75rem;
+}
+
+.likes,
+.captions-info {
+	margin: 0;
+}
+
+.likes:after {
+	content: " likes"
+}
