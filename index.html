@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FASTeating</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div id="fadein"></div>
+
+  <div class="main-background">
+
+    <!-- HEADER -->
+    <header class="padding text-white">
+      <h1>Everything Fast Food</h1>
+      <p>One stop shop for everything fast food</p>
+    </header>
+
+    <!-- MENU -->
+    <main id="menu" class="padding">
+	<p class="discount-text text-center"><span>10% discount </span>on $50 or more orders!</p>
+	</main>
+
+    <!-- ORDER SUMMARY -->
+    <footer class="padding padding-bottom">
+      <h3 class="order-summary-header text-center">Your Orders</h3>
+      <div id="order-summary" class="order-summary"></div>
+      <div id="total-price" class="total-price"></div>
+    </footer>
+
+  </div>
+	
+  <!-- MODAL -->
+  <div class="modal">
+    <button id="close-modal-button" class="btn close-modal-button" type="button">X</button>
+
+    <form action="/" id="payment-form" class="payment-form" autocomplete="off" method="POST">
+      <h3 class="payment-form-header text-center">Enter card details</h3>
+
+      <div class="input-group">
+        <input type="text" name="full-name" id="full-name" placeholder="Enter your name" required>
+        <input type="number" name="card-number" id="card-number" placeholder="Enter card number" required>
+        <input type="number" name="cvv" id="cvv" placeholder="Enter CVV" required>
+      </div>
+
+      <button id="payment-form-button" class="btn btn-theme payment-form-button">Pay</button>
+    </form>
+
+	<!-- RATING -->
+    <div class="rating-container">
+      <h3>Please leave a rating!</h3>
+      <div id="rate" class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text"></label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text"></label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text"></label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text"></label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text"></label>
+      </div>
+      <button id="rating-button" class="btn btn-theme rating-button">Submit</button>
+    </div>
+      
+  </div>
+  
+  <script type="module" src="app.js"></script>
+</body>
+</html>
