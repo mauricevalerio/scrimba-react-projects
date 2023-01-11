@@ -1,0 +1,88 @@
+/* UTILITY */
+.margin-zero {
+    margin: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-color-theme {
+    color: #2B283A;
+}
+
+/* MAIN */
+.main {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-bottom: 3px solid #F5F5F5;
+}
+
+.travel-image {
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.section-travel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.google-map-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    letter-spacing: 0.0125rem;
+    flex-wrap: wrap;
+}
+
+.google-pin-logo {
+    height: 10px;
+}
+
+.date-visited-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.attraction-description {
+    font-size: 0.95rem;
+    line-height: 1.1;
+}
+
+@media (min-width: 576px) {
+    .main {
+        flex-direction: row;
+    }
+
+    .travel-image {
+        max-width: 40%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-travel-info {
+        gap: 20px;
+    }
+
+    .google-map-info-container,
+    .date-visited-text {
+        font-size: 1.25rem;
+    }
+
+    .attraction-name {
+        font-size: 1.5rem;
+    }
+
+    .attraction-description {
+        font-size: 1.125rem;
+    }
+}
