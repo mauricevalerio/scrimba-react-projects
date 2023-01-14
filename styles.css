@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/*https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	background: #fefae0;
+}
+
+/* HEADER */
+
+.header-container {
+	padding: 1em 1.125em;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+h3 {
+	color: #0E0E0E;
+	font-size: 0.813rem;
+	margin-bottom: 0;
+	font-weight: 700;
+}
+
+.logo {
+	max-width: 25px;
+	max-height: 25px;
+}
+
+.navbar-ul {
+	font-family: 'Roboto', sans-serif;
+	gap: 10px;
+	font-size: 0.75rem;
+	margin-left: auto;
+}
+
+li a {
+	text-decoration: none;
+	color: #090909;
+	font-weight: 700;
+}
+
+li a:hover {
+	border-bottom: 5px solid red;
+}
+
+/* LANDING PAGE */
+
+.landing-page {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.31)), center/cover no-repeat url('images/landing-page-background.png');
+	color: #FFFFFF;
+	padding: 5.438em 1.5em 1.1563em;
+	display: grid;
+	gap: 10px;
+	align-content: end;
+}
+
+.landing-page>p:first-of-type {
+	line-height: 1.1;
+}
+
+.landing-page>p:last-of-type {
+	line-height: 1.5;
+	max-width: 700px;
+}
+
+/* UTILITIES */
+
+.margin-zero {
+	margin: 0;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+/* BLOGS */
+
+.blogs {
+	padding: 2.125em 1.25em 1.688em;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 40px;
+}
+
+.blog-section {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+}
+
+h2 {
+	font-weight: 700;
+}
+
+.blog-image {
+	display: block;
+	max-width: 100%;
+	border-radius: 5px;
+}
+
+.blog-date {
+	font-size: 0.875rem;
+}
+
+.btn {
+	display: block;
+	margin: 0 auto 1em;
+	background: transparent;
+	border: none;
+	font-size: 1.125rem;
+	font-weight: 700;
+	font-family: inherit;
+	text-decoration: 2px underline;
+	cursor: pointer;
+}
+
+/* FOOTER */
+
+.footer-container {
+	background: #202020;
+	padding: 2em 5.563em;
+	color: #FFF;
+	text-align: center;
+	font-size: 0.75rem;
+	line-height: 1.25;
+}
+
+.footer-container>p:first-of-type {
+	font-weight: 700;
+}
+
+.footer-container>p:last-of-type {
+	color: #D7D7D7;
+}
+
+/* ABOUT ME */
+h1 {
+	font-weight: 700;
+}
+
+.about-me-section {
+	padding: 2em 1.25em 3.18em;
+	line-height: 1.5;
+
+}
+
+.about-me-section p {
+	text-align: justify;
+}
+
+.recent-post-header {
+	text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 576px) {
+	.navbar-ul {
+		font-size: 1rem;
+	}
+
+	.about-me-section {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 10px;
+		align-items: start;
+	}
+
+	.avatar {
+		grid-column: 1 / 2;
+	}
+
+	.about-me-header {
+		align-self: center;
+		grid-column: 2 / -1;
+	}
+
+	.about-me-contents {
+		grid-column: 1 / -1;
+	}
+
+	.recent-post-header {
+		font-size: 1.5rem;
+	}
+}
+
+
+@media (min-width: 768px) {
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	.logo {
+		max-width: 35px;
+		max-height: 35px;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		letter-spacing: -0.03em;
+	}
+
+	.landing-page {
+		min-height: 500px;
+		border-radius: 15px;
+	}
+
+	.blogs {
+		grid-template-columns: repeat(3, minmax(200px, 1fr));
+	}
+
+	.footer-container {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.body-padding {
+		padding: 0 10em;
+	}
+
+	.about-me-contents {
+		font-size: 1.125rem;
+	}
+}
