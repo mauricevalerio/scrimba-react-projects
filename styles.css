@@ -166,3 +166,13 @@ body {
         border-radius: 10px;
     }
 }
+
+@media (min-width: 1024px) {
+    .dog-name {
+        font-size: 2.125rem;
+    }
+
+    .dog-bio {
+        font-size: 1.125rem;
+    }
+}
