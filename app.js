@@ -23,6 +23,7 @@ const buttonResumeTime = document.getElementById("resume-time");
 buttonPauseTime.disabled = true;
 buttonResumeTime.disabled = true;
 buttonStartGame.disabled = true;
+
 function toggleScoreButtons(toggle) { //loops over score buttons to disable/enable them
 	for (let btn of buttonsScore) {
 		btn.disabled = toggle;
