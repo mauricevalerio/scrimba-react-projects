@@ -126,10 +126,34 @@ p {
     text-align: center;
     margin: 0.25em 0;
     font-size: 0.75rem;
+    position: relative;
+    cursor: pointer;
 }
 
 p.dark {
     color: #FFF;
+}
+
+/* CLIPBOARD */
+.clipboard:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0.75rem;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 0.25s ease-in-out;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+}
+
+p:hover:before {
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (min-width: 600px) {

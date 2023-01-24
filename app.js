@@ -22,9 +22,10 @@ function getColorSchemeHtml(colorSchemeData) {
         document.getElementById('color-scheme-container').innerHTML += `
         <div>
             <div class="color-container" style="background-color:${color.hex.value}"></div>
-            <p>${color.hex.value}</p>
+            <p data-hover="" class="clipboard">${color.hex.value}</p>
         </div>
         `
+        copyToClipBoard()
     })
 }
 
@@ -36,24 +37,38 @@ function handleformSubmit(e) {
     colorSchemeApi(new FormData(document.getElementById('color-scheme-form'))) //passes form data
         .then(data => {
             getColorSchemeHtml(data)
+            handleDarkModeHexText()
         })
 }
 
 function handleDarkMode() {
     const darkElements = ['.toggle-mode-inner', '.toggle-mode-outer', '.color-scheme-dropdown', 'button', 'body']
-    console.log(darkElements)
     darkElements.forEach(element => {
         document.querySelector(`${element}`).classList.toggle('dark')
     })
+    handleDarkModeHexText()
+}
 
+function handleDarkModeHexText() {
     for (let p of document.querySelectorAll('p')) {
         p.classList.toggle('dark')
     }
 }
 
 document.getElementById('color-scheme-form').addEventListener('submit', handleformSubmit)
-
 document.getElementById('toggle-mode-outer').addEventListener('click', handleDarkMode)
+
+function copyToClipBoard() {
+    for (let p of document.querySelectorAll('p')) {
+        p.addEventListener('click', async () => {
+            await navigator.clipboard.writeText(p.textContent)
+            p.dataset.hover = "Color copied!"
+        })
+        p.addEventListener("mouseover", (e) => { //revert back to original hover text after copy to clipboard
+            p.dataset.hover = "Copy to clipboard"
+        })
+    }
+}
 
 colorSchemeApi(new FormData(document.getElementById('color-scheme-form'))) //generates default data
     .then(data => {
