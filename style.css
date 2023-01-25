@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    overflow: hidden;
 }
 
 body.dark {

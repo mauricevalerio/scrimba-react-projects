@@ -4,6 +4,8 @@ import { colorSchemeApi } from './apiConfig.js'
 const schemeModesArray = ['monochrome', 'monochrome-dark', 'monochrome-light', 'analogic', 'complement', 'analogic-complement',
     'triad', 'quad']
 
+let isDarkMode = false;
+
 function getDropDownHtml() {
     let dropdownTemplate = document.createElement('template')
 
@@ -22,7 +24,7 @@ function getColorSchemeHtml(colorSchemeData) {
         document.getElementById('color-scheme-container').innerHTML += `
         <div>
             <div class="color-container" style="background-color:${color.hex.value}"></div>
-            <p data-hover="" class="clipboard">${color.hex.value}</p>
+            <p data-hover="" class="clipboard ${isDarkMode ? "dark" : ""}">${color.hex.value}</p>
         </div>
         `
         copyToClipBoard()
@@ -37,19 +39,17 @@ function handleformSubmit(e) {
     colorSchemeApi(new FormData(document.getElementById('color-scheme-form'))) //passes form data
         .then(data => {
             getColorSchemeHtml(data)
-            handleDarkModeHexText()
         })
 }
 
 function handleDarkMode() {
     const darkElements = ['.toggle-mode-inner', '.toggle-mode-outer', '.color-scheme-dropdown', 'button', 'body']
+
+    isDarkMode = !isDarkMode
     darkElements.forEach(element => {
         document.querySelector(`${element}`).classList.toggle('dark')
     })
-    handleDarkModeHexText()
-}
 
-function handleDarkModeHexText() {
     for (let p of document.querySelectorAll('p')) {
         p.classList.toggle('dark')
     }
