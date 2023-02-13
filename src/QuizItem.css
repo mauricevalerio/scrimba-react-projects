@@ -1,0 +1,43 @@
+.quiz-item-container {
+    padding: 0.75em;
+    border-bottom: 2px solid #DBDEF0;
+}
+
+.choices-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75em;
+}
+
+/* QUESTION */
+h3.question {
+    font-size: 1.35rem;
+    color: #293264;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+/* CHOICES STYLING */
+.selected-choice {
+    background: #D6DBF5;
+}
+
+.choice {
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    border: 0.794239px solid #4D5B9E;
+    border-radius: 7.94239px;
+    padding: 0.5em;
+    width: 80%;
+}
+
+.correct-choice {
+    background: #94D7A2;
+}
+
+.wrong-choice {
+    background: #F8BCBC;
+}

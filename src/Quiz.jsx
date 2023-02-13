@@ -1,47 +1,45 @@
 import { useState, useEffect } from "react"
-import Choices from './Choices'
-import decode from 'html-entities-decode'
+import QuizItem from './QuizItem'
 import './Quiz.css'
 
 function Quiz(props) {
-    const [selectedChoiceId, setSelectedChoiceId] = useState('')
 
-    //every change of the state variable selectedChoiceId for each quizItem, run useEffect
-        //modify the quizItem array of objects
-            //return the quizItem object if choice changes add a property called user_choice
-            //return same quizItem object if choice does not change
-    useEffect(() => {
-        props.add_user_choice(prevQuizItemProperties => {
-            return prevQuizItemProperties.map(item => {
-                return item.id === props.id ? { ...item, user_choice: selectedChoiceId } : item
-            })
-        })
-    }, [selectedChoiceId])
-
-    const choicesElements = props.choices.map(choice => { //for every choice
-        return <Choices 
-        key={choice.id}
-        id={choice.id}
-        choice={choice.incorrect_answer || choice.correct_answer}
-        correct_answer={choice.correct_answer}
-        selectedChoiceId={selectedChoiceId}
-        handleSelectedChoiceId={handleSelectedChoiceId}
-        is_correct={props.is_correct}
-        />
-      })
+    const [quizQuestions, setQuizQuestions] = useState([])
+    const [isQuizOver, setIsQuizOver] = useState(false)
+    const [score, setScore] = useState(0) 
     
-    function handleSelectedChoiceId(choiceId) {
-        setSelectedChoiceId(choiceId)
+    useEffect(() => {
+        setQuizQuestions(props.quizData)
+    }, [])
+
+    function handleCheckAnswers() {
+        if (isQuizOver) {
+            setScore(0)
+            props.setHasGameStarted(false)
+        }
+        setIsQuizOver(prevBool => !prevBool)
     }
 
+    const quizElements = quizQuestions.map(quizQuestion => {
+        return <QuizItem
+        key={quizQuestion.id} 
+        id={quizQuestion.id}
+        question={quizQuestion.question}
+        choices={quizQuestion.choices}
+        correctAnswer={quizQuestion.correct_answer} //object
+        isQuizOver={isQuizOver}
+        setScore={setScore}
+        />
+    })
+
     return (
-        <div className="quiz-item">
-            <h3>{decode(props.question)}</h3>
-            <div className="choices">
-                {choicesElements}
-            </div>
-            <p>{props.correct_answer.correct_answer}</p>
-        </div>
+        <>
+            {quizElements}
+            <button 
+            className="btn check-answers-btn"
+            onClick={handleCheckAnswers}>{isQuizOver ? "Play Again" : "Check Answers"}</button>
+            {isQuizOver && <p className="results">You scored {score}/{quizQuestions.length} correct answers</p>}
+        </>
     )
 }
 

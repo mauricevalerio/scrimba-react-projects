@@ -1,37 +1,27 @@
 import { useState, useEffect } from "react"
-import { nanoid } from "nanoid"
+import { getQuestions, getCategories } from "./services/fetch"
 import "./App.css"
 import Quiz from "./Quiz"
 
 function App() {
+  const [gameSetup, setGameSetup] = useState({
+    numberOfQuestions: undefined,
+    category: '',
+    difficulty: ''
+  })
+  const [categories, setCategories] = useState([])
   const [hasGameStarted, setHasGameStarted] = useState(false)
-  const [quizItems, setQuizItems] = useState([])
-
-  console.log(quizItems)
+  const [quizData, setQuizData] = useState([])
   
-  function handleStartGameBtn() {
+  function handleStartGameBtn(e) {
+    e.preventDefault()
     setHasGameStarted(prevStatus => !prevStatus)
   }
-  function handleCheckAnswers() {
-    setQuizItems(prevObject => {
-      return prevObject.map(item => {
-        return item.correct_answer.id === item.user_choice ? {...item, is_correct: true} : {...item, is_correct: false}
-      })
-      
-    })
-  }
 
-  const quizElements = quizItems.map(item => {
-    return <Quiz 
-      key={item.id}
-      id={item.id}
-      question={item.question}
-      choices={item.choices}
-      correct_answer={item.correct_answer}
-      add_user_choice={setQuizItems}
-      is_correct={item.is_correct}
-    />
-  })
+  function handleForm(e) {
+    const { name, value } = e.target
+    setGameSetup(prevSetup => ({ ...prevSetup, [name]: value }))
+  }
 
   function shuffleChoices(choicesArray){ //fisher-yates shuffle
     let i = choicesArray.length
@@ -43,46 +33,78 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=4')
-      .then(response => response.json())
-      .then(data => 
-        {
-          setQuizItems(data.results.map(item => {
-            return {
-              ...item, 
-              //adds unique id to quiz item object
-              id: nanoid(), 
-
-              //overwrites correct answer property from API
-              correct_answer: { id: nanoid(), correct_answer: item.correct_answer },
-
-              //overwrites incorrect answer property from API
-              incorrect_answers: item.incorrect_answers.map(incorrect_answer => ({ id: nanoid(), incorrect_answer: incorrect_answer}))
-            }
-          }))
-          //shuffles the choices
-          setQuizItems(prevQuizOrder => { 
-            return prevQuizOrder.map(item => ({ ...item, choices: shuffleChoices([...item.incorrect_answers, item.correct_answer])}))
-          })
+    getQuestions(gameSetup)
+      .then(data => {
+        setQuizData(data)
+        //shuffles the choices and adds a property choices
+        setQuizData(prevChoicesOrder => { 
+          return prevChoicesOrder.map(quizItem => ({ ...quizItem, choices: shuffleChoices([...quizItem.incorrect_answers, quizItem.correct_answer])}))
         })
+      })
+  }, [gameSetup])
+
+  useEffect(() => {
+    getCategories()
+      .then(data => setCategories(data.trivia_categories))
   }, [])
+
+  const categoryElements = categories.map(category => {
+    return <option key={category.id} value={category.id}>{category.name}</option>
+  })
 
   return (
     <div className="App">
       {hasGameStarted ? 
-        <main>
-          {quizElements}
-          <button 
-          className="btn check-answers-btn"
-          onClick={handleCheckAnswers}>Check Answers</button>
+        <main className="quiz-container">
+          <Quiz 
+          quizData={quizData}
+          setHasGameStarted={setHasGameStarted}/>
         </main>
         : 
         <section className="landing-page">
           <h1>Quizzical</h1>
-          <p>Some description if needed</p>
-          <button
+          <p className="game-caption">Test every bit of your brain cells!</p>
+
+          <form className="game-setup">
+            <label htmlFor="numberOfQuestions">Number of Questions: </label>
+            <input 
+              id="numberOfQuestions"
+              value={gameSetup.numberOfQuestions}
+              onChange={handleForm}
+              type="number" 
+              name="numberOfQuestions"
+             />
+
+            <label htmlFor="category">Category: </label>
+            <select 
+                id="category"
+                value={gameSetup.category}
+                onChange={handleForm}
+                name="category"
+            >
+              <option value="">Any Category</option>
+              {categoryElements}
+            </select>
+
+            <label htmlFor="difficulty">Difficulty: </label>
+            <select 
+              id="difficulty"
+              value={gameSetup.difficulty}
+              onChange={handleForm}
+              name="difficulty" 
+            >
+                <option value="">Any Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+
+              <button
             className="btn start-game-btn"
             onClick={handleStartGameBtn}>Start Quiz</button>
+          </form>
+
+
         </section>
       }
     </div>
@@ -90,3 +112,6 @@ function App() {
 }
 
 export default App
+
+
+//https://opentdb.com/api_category.php
