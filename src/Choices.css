@@ -1,0 +1,21 @@
+.selected-choice {
+    background: #D6DBF5;
+}
+
+.choice {
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    border: 0.794239px solid #4D5B9E;
+    border-radius: 7.94239px;
+    padding: 0.5em;
+    width: 80%;
+}
+
+.correct-choice {
+    background: #94D7A2;
+}
+
+.wrong-choice {
+    background: #F8BCBC;
+}

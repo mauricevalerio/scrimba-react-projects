@@ -1,0 +1,37 @@
+.landing-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+p {
+  color: #293264;
+}
+
+.btn {
+  font-family: inherit;
+  color: #FFF;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.start-game-btn {
+  background: #293264;
+  padding: 1em 2.5em;
+}
+
+.check-answers-btn {
+  display: block;
+  margin: 0.5em auto 0;
+  background: #4D5B9E;
+  padding: 0.5em 1em;
+}
+
+main {
+  padding: 0.75em;
+}

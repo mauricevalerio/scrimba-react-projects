@@ -1,0 +1,19 @@
+.quiz-item {
+    padding: 0.75em;
+    border-bottom: 2px solid #DBDEF0;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75em;
+}
+
+h3 {
+    font-size: 1.35rem;
+    color: #293264;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1em;
+}
