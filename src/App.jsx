@@ -5,7 +5,7 @@ import Quiz from "./Quiz"
 
 function App() {
   const [gameSetup, setGameSetup] = useState({
-    numberOfQuestions: undefined,
+    numberOfQuestions: '',
     category: '',
     difficulty: ''
   })
@@ -58,7 +58,8 @@ function App() {
         <main className="quiz-container">
           <Quiz 
           quizData={quizData}
-          setHasGameStarted={setHasGameStarted}/>
+          setHasGameStarted={setHasGameStarted}
+          setGameSetup={setGameSetup}/>
         </main>
         : 
         <section className="landing-page">
@@ -112,6 +113,3 @@ function App() {
 }
 
 export default App
-
-
-//https://opentdb.com/api_category.php

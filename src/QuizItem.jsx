@@ -21,7 +21,7 @@ function QuizItem(props) {
             className={`choice ${selectedChoiceId === choiceData.id ? "selected-choice" : ""}
             ${props.isQuizOver && props.correctAnswer.id === choiceData.id ? "correct-choice" :  //marks every correct answer
             props.isQuizOver && selectedChoiceId === choiceData.id ? "wrong-choice" : ""}
-            `} //finds the selectedChoiceId in every choice and marks it wrong
+            ${props.isQuizOver ? "disable-events" : ""}`} //finds the selectedChoiceId in every choice and marks it wrong
             onClick={() => handleSelectedChoiceId(choiceData.id)}>
                 {decode(choiceData.incorrect_answer || choiceData.correct_answer)}
             </p>
@@ -36,7 +36,6 @@ function QuizItem(props) {
             <div className="choices-container">
                 {choicesElements(props.choices)}
             </div>
-            <p>{props.correctAnswer.correct_answer}</p>
         </div>
     )
 }

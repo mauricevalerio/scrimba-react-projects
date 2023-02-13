@@ -41,3 +41,7 @@ h3.question {
 .wrong-choice {
     background: #F8BCBC;
 }
+
+.disable-events {
+    pointer-events: none;
+}
