@@ -47,7 +47,6 @@ h3.question {
 }
 
 div.marker {
-    margin: 0 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,6 +77,9 @@ div.marker > p {
         grid-template: repeat(2, 1fr) / repeat(2, 1fr);
         place-items: center;
     }
+    div.marker {
+        grid-column: 1 / -1;
+    }
 }
 
 @media (width > 768px) {
@@ -94,5 +96,8 @@ div.marker > p {
     }
     .choice {
         width: auto;
+    }
+    div.marker {
+        margin: 0 0 0 auto; 
     }
 }
