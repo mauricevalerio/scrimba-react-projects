@@ -37,9 +37,9 @@ function QuizItem(props) {
             <div className="choices-container">
                 {choicesElements(props.choices)}
                 
-                <div className="marker">{props.isQuizOver && props.correctAnswer.id === selectedChoiceId ? <p className="marks check-mark">&#10003;</p>
+                {props.isQuizOver && <div className="marker">{props.isQuizOver && props.correctAnswer.id === selectedChoiceId ? <p className="marks check-mark">&#10003;</p>
                 : props.isQuizOver && selectedChoiceId !== '' ? <p className="marks cross-mark">X</p>
-                : props.isQuizOver ? <p>No selected answer<span className="marks cross-mark">X</span></p> : ""}</div>
+                : props.isQuizOver ? <p>No selected answer<span className="marks cross-mark">X</span></p> : ""}</div>} 
             </div>
         </div>
     )

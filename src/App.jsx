@@ -73,8 +73,9 @@ function App() {
           <p className="game-caption">Test every bit of your brain cells!</p>
 
           <form className="game-setup">
-            <label htmlFor="numberOfQuestions">Number of Questions: </label>
+            <label htmlFor="numberOfQuestions">Number of Questions (default: 10): </label>
             <input 
+              placeholder="10"
               id="numberOfQuestions"
               value={gameSetup.numberOfQuestions}
               onChange={handleForm}
