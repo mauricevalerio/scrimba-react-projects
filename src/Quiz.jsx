@@ -16,7 +16,7 @@ function Quiz(props) {
         if (isQuizOver) {
             setScore(0)
             props.setHasGameStarted(false)
-            props.setGameSetup({
+            props.setQuizSetup({
                 numberOfQuestions: '',
                 category: '',
                 difficulty: ''

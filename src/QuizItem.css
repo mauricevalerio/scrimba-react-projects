@@ -46,21 +46,21 @@ h3.question {
     pointer-events: none;
 }
 
-.marker {
+div.marker {
     margin: 0 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.marker > p {
+div.marker > p {
     margin: 0;
     font-size: 1.125rem;
 }
 
 .marks {
     font-weight: 700;
-    padding: 0.125em;
+    padding: 0.155em;
     border-radius: 50%;
 }
 
