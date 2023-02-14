@@ -27,7 +27,7 @@ function QuizForm(props) {
 
     return (
         <form className="game-setup">
-            <label htmlFor="numberOfQuestions">Number of Questions (default: 10): </label>
+            <label htmlFor="numberOfQuestions">Number of Questions: </label>
             <input 
               placeholder="10"
               id="numberOfQuestions"
@@ -61,9 +61,11 @@ function QuizForm(props) {
                 <option value="hard">Hard</option>
               </select>
 
+              {props.hasNoResults && <p className="no-results-message">No results found based on your selected criteria!</p>}
+
               <button
             className="btn start-game-btn"
-            onClick={handleStartGameBtn}>Start Quiz</button>
+            onClick={props.hasNoResults ? undefined : handleStartGameBtn}>Start Quiz</button>
           </form>
     )
 }

@@ -7,20 +7,24 @@ function getQuestions(gameSetup) {
     return fetch(url)
     .then(response => response.json())
     .then(data => {
-        return data.results.map(item => {
-            return {
-              ...item, 
+        if (data.response_code === 1) {
+            return null
+        } else {
+            return data.results.map(item => {
+                return {
+                ...item, 
 
-              //adds unique id to quiz item object
-              id: nanoid(), 
+                //adds unique id to quiz item object
+                id: nanoid(), 
 
-              //overwrites correct answer property from API
-              correct_answer: { id: nanoid(), correct_answer: item.correct_answer },
+                //overwrites correct answer property from API
+                correct_answer: { id: nanoid(), correct_answer: item.correct_answer },
 
-              //overwrites incorrect answer property from API
-              incorrect_answers: item.incorrect_answers.map(incorrect_answer => ({ id: nanoid(), incorrect_answer: incorrect_answer}))
-            }
-        })
+                //overwrites incorrect answer property from API
+                incorrect_answers: item.incorrect_answers.map(incorrect_answer => ({ id: nanoid(), incorrect_answer: incorrect_answer}))
+                }
+            })
+        }
     })
 }
 

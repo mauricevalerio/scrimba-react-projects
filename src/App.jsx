@@ -13,6 +13,8 @@ function App() {
     category: '',
     difficulty: ''
   })
+
+  const [hasNoResults, setHasNoResults] = useState(false)
   
   const [hasGameStarted, setHasGameStarted] = useState(false)
   const [quizData, setQuizData] = useState([])
@@ -29,11 +31,16 @@ function App() {
   useEffect(() => {
     getQuestions(quizSetup)
       .then(data => {
-        setQuizData(data)
-        //shuffles the choices and adds a property choices
-        setQuizData(prevChoicesOrder => { 
-          return prevChoicesOrder.map(quizItem => ({ ...quizItem, choices: shuffleChoices([...quizItem.incorrect_answers, quizItem.correct_answer])}))
-        })
+        if (data) {
+          setHasNoResults(false)
+          setQuizData(data)
+          //shuffles the choices and adds a property choices
+          setQuizData(prevChoicesOrder => { 
+            return prevChoicesOrder.map(quizItem => ({ ...quizItem, choices: shuffleChoices([...quizItem.incorrect_answers, quizItem.correct_answer])}))
+          })
+        } else {
+          setHasNoResults(true)
+        }
       })
   }, [quizSetup])
 
@@ -55,6 +62,7 @@ function App() {
           <p className="game-caption">Test every bit of your brain cells!</p>
           <QuizForm 
           quizSetup={quizSetup}
+          hasNoResults={hasNoResults}
           setQuizSetup={setQuizSetup}
           setHasGameStarted={setHasGameStarted}/>
         </section>
