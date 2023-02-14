@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import { getQuestions, getCategories } from "./services/fetch"
+import topBlob from "./assets/top-blob.png"
+import bottomBlob from "./assets/bottom-blob.png"
 import "./App.css"
 import Quiz from "./Quiz"
 
@@ -53,7 +55,11 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="app">
+      <img src={topBlob} alt="Top Blob Image" className="blob top-blob" />
+      <img src={bottomBlob} alt="Top Blob Image" className="blob bottom-blob" />
+
+
       {hasGameStarted ? 
         <main className="quiz-container">
           <Quiz 

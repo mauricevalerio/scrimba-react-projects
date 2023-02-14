@@ -1,8 +1,12 @@
+.app {
+  position: relative;
+}
+
 .landing-page {
+  padding: 1em;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -32,6 +36,7 @@ h1 {
 }
 
 .start-game-btn {
+  margin-top: 0.5em;
   background: #293264;
   padding: 1em 2.5em;
 }
@@ -47,11 +52,11 @@ input#numberOfQuestions {
   font-family: inherit;
   border-radius: 10px;
   outline: none;
-  padding: 1em;
+  padding: 0.5em;
+  font-size: 1.125rem;
 }
 
 select {
-  font-size: 1.125rem;
   width: 100%;
 }
 
@@ -60,4 +65,46 @@ form.game-setup {
   flex-direction: column;
   gap: 1em;
   padding: 0.5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* IMAGES */
+
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+
+.top-blob {
+  right: 0;
+}
+
+.bottom-blob {
+  left: 0;
+  bottom: 0;
+}
+
+@media (width >= 568px) {
+  .landing-page {
+    justify-content: center;
+  }
+}
+
+@media (width >= 768px) {
+  main.quiz-container {
+    padding: 5em 10%;
+  }
+}
+
+@media (width >= 1024px) {
+  main.quiz-container {
+    padding: 5em 15%;
+  }
+  .blob {
+    width: 15%;
+  }
 }

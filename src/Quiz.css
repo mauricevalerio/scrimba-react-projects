@@ -1,9 +1,10 @@
 /*btn class in App.css*/
 .check-answers-btn {
+    margin-top: 0.5em;
     display: block;
     margin: 0.5em auto 0;
     background: #4D5B9E;
-    padding: 0.5em 1em;
+    padding: 1em 2.5em;
   }
 
 .results {

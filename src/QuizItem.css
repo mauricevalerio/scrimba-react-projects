@@ -28,8 +28,8 @@ h3.question {
     cursor: pointer;
     margin: 0;
     text-align: center;
-    border: 0.794239px solid #4D5B9E;
-    border-radius: 7.94239px;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
     padding: 0.5em;
     width: 80%;
 }
@@ -44,4 +44,55 @@ h3.question {
 
 .disable-events {
     pointer-events: none;
+}
+
+.marker {
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.marker > p {
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+.marks {
+    font-weight: 700;
+    padding: 0.125em;
+    border-radius: 50%;
+}
+
+.check-mark {
+    background: #94D7A2;
+}
+
+.cross-mark {
+    background: #F8BCBC;
+}
+
+@media (width >= 568px) and (width <= 768px) {
+    .choices-container {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        place-items: center;
+    }
+}
+
+@media (width > 768px) {
+    .quiz-item-container {
+        padding: 1.5em 0;
+    }
+    h3.question {
+        text-align: left;
+    }
+    .choices-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .choice {
+        width: auto;
+    }
 }

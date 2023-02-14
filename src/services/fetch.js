@@ -3,8 +3,6 @@ import { nanoid } from 'nanoid'
 function getQuestions(gameSetup) {
     const { numberOfQuestions, category, difficulty } = gameSetup
     const url = new URL(`https://opentdb.com/api.php?amount=${numberOfQuestions ? numberOfQuestions : 10}&category=${category}&difficulty=${difficulty}`) 
-    //clean query strings if none specified
-    //if number of questions is blank default to 10
 
     return fetch(url)
     .then(response => response.json())
