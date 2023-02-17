@@ -15,7 +15,6 @@ function App() {
   })
 
   const [hasNoResults, setHasNoResults] = useState(false)
-  
   const [hasGameStarted, setHasGameStarted] = useState(false)
   const [quizData, setQuizData] = useState([])
 
