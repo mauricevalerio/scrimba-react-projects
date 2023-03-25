@@ -1,15 +1,21 @@
 
 import axios from "axios"
-import { Link, useLoaderData } from "react-router-dom"
+import { useRef } from "react"
+import { useLoaderData } from "react-router-dom"
+import HomeDefaultTemplateContainer from "../components/HomeDefaultTemplateContainer"
+import HomeDefaultTemplate from "../components/HomeDefaultTemplate"
+import HomeFeaturedTemplate from "../components/HomeFeaturedTemplate"
+import HomeHeroCarousel from "../components/HomeHeroCarousel"
 
-export async function loader() {
+export async function loader() {    
     try {
-        const [ trendingData, popularData, upcomingData ] = await Promise.all([
-            axios.get("https://api.themoviedb.org/3/trending/movie/day?api_key=04b475fff6298d4658fe5907880a9547"),
-            axios.get("https://api.themoviedb.org/3/movie/popular?api_key=04b475fff6298d4658fe5907880a9547&language=en-US&page=1"),
-            axios.get("https://api.themoviedb.org/3/movie/upcoming?api_key=04b475fff6298d4658fe5907880a9547&language=en-US&page=1")
+        const [ popularData, topRatedData, upcomingData ] = await Promise.all([
+            axios.get(`${import.meta.env.VITE_TMDB_BASE_API_URL}movie/popular?api_key=${import.meta.env.VITE_TMDB_PUBLIC_API_KEY}`),
+            axios.get(`${import.meta.env.VITE_TMDB_BASE_API_URL}movie/top_rated?api_key=${import.meta.env.VITE_TMDB_PUBLIC_API_KEY}&page=1`),
+            axios.get(`${import.meta.env.VITE_TMDB_BASE_API_URL}movie/upcoming?api_key=${import.meta.env.VITE_TMDB_PUBLIC_API_KEY}&page=1`)
         ])
-        return ({trendingData, popularData, upcomingData})
+        
+        return ({ popularData, topRatedData, upcomingData })
     } catch (e) {
         throw {
             message: e.message
@@ -19,61 +25,31 @@ export async function loader() {
 
 export default function Home() {
     const {
-        trendingData: trendingMovies, 
-        popularData: popularMovies,
-        upcomingData: upcomingMovies } = useLoaderData()
-
-    const upcomingMoviesElements = upcomingMovies.data.results.map(movie => {
-        return <Link 
-            key={movie.id} 
-            to={`movies/${movie.id}`}>
-                <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                alt={`Poster for the movie ${movie.title}`} 
-                className="object-cover max-w-none w-[150px] h-auto rounded-lg shadow-md shadow-neutral-900 hover:scale-105 transition-transform duration-300 ease-out"/>
-        </Link>
-    })
+        popularData: { data: popularMovies }, 
+        topRatedData: { data: topRatedMovies },
+        upcomingData: { data: upcomingMovies }
+    } = useLoaderData()
     
-    const trendingMoviesElements = trendingMovies.data.results.map(movie => {
-        return <Link 
-            key={movie.id} 
-            to={`movies/${movie.id}`}>
-                <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                alt={`Poster for the movie ${movie.title}`} 
-                className="object-cover max-w-none w-[150px] h-auto rounded-lg shadow-md shadow-neutral-900 hover:scale-105 transition-transform duration-300 ease-out"/>
-         </Link>
-    })
-
-    const popularMoviesElements = popularMovies.data.results.map(movie => {
-        return <Link 
-            key={movie.id} 
-            to={`movies/${movie.id}`}>
-                <img 
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
-                alt={`Poster for the movie ${movie.title}`} 
-                className="object-cover max-w-none w-[150px] h-auto rounded-lg shadow-md shadow-neutral-900 hover:scale-105 transition-transform duration-300 ease-out"/>
-        </Link>
-    })
+    const { current: featuredMovie } = useRef(upcomingMovies.results[ Math.floor(Math.random() * popularMovies.results.length)])
 
     return (
-        <section className="home p-4">
+        <>
+            <div className="px-4 lg:px-16">
+                <HomeHeroCarousel itemsCarousel={popularMovies}/>
 
-            <h2 className="text-xl font-bold">Upcoming Releases</h2>
-            <div className="flex gap-4 overflow-x-scroll px-0 py-4">
-                {upcomingMoviesElements}
+                <HomeDefaultTemplateContainer title="Top Rated">
+                    <HomeDefaultTemplate items={topRatedMovies} />
+                </HomeDefaultTemplateContainer>
+
+                <HomeDefaultTemplateContainer title="Featured">
+                    <HomeFeaturedTemplate featuredItem={featuredMovie} />
+                </HomeDefaultTemplateContainer>
+
+                <HomeDefaultTemplateContainer title="Upcoming Releases">
+                    <HomeDefaultTemplate items={upcomingMovies} />
+                </HomeDefaultTemplateContainer>
             </div>
-
-            <h2 className="text-xl font-bold">Trending</h2>
-            <div className="flex gap-4 overflow-x-scroll px-0 py-4">
-                {trendingMoviesElements}
-            </div>
-
-            <h2 className="text-xl font-bold">Popular</h2>
-            <div className="flex gap-4 overflow-x-scroll px-0 py-4">
-                {popularMoviesElements}
-            </div>
-
-        </section>
+        </>
     )
 }
+

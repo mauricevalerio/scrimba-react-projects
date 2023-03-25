@@ -1,26 +1,33 @@
 import { useOutletContext } from "react-router-dom"
-import LiteYouTubeEmbed from "react-lite-youtube-embed"
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from "react-responsive-carousel"
 
 export default function MovieDetailVideos() {
     const { movieVideos: { results } } = useOutletContext()
-    console.log(results)
     const videoElements = results.map(video => {
         return video.site === "YouTube" ?
-        <div key={video.id}>
-            <LiteYouTubeEmbed 
-            id={video.key}
+            <div key={video.key} className="video-responsive rounded-lg bg-black p-4">
+            <iframe
+            src={`https://www.youtube.com/embed/${video.key}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
             title={video.name}
-            nocookie={true}
             />
-            <p>{video.name}</p>
-        </div>
+            </div> 
         : null
     })
     
     return (
-        <section className="flex flex-col gap-4 px-4 max-w-2xl">
-            {videoElements.length ? videoElements : <p>No videos found :(</p>}
-        </section>
+        <>
+            {videoElements.length ? 
+                <Carousel
+                showStatus={false}
+                showThumbs={false}
+                className="max-w-[1024px] pb-4 mx-auto">
+                    {videoElements}
+                </Carousel> : 
+                <h1 className="text-2xl">No videos found &#9785;</h1>
+            }
+        </>
     )
 }

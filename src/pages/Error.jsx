@@ -5,6 +5,11 @@ export default function Error() {
     console.log(error)
 
     return (
-        <h1>Error</h1>
+        <div className="flex flex-col gap-2 my-auto">
+            <h1 className="text-2xl">An unexpected error occurred &#9785;</h1>
+            <pre>{error.message}</pre>
+            <p>Kindly report it to our team.</p>
+            <p>Thank you and sorry for any inconvenience caused.</p>
+        </div>
     )
 }
