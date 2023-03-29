@@ -5,6 +5,7 @@
 
 :root {
   --primary: #FFF;
+  --secondary: #000;
 }
 
 
@@ -102,38 +103,20 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 100%;
 }
 
-/* LOADERS */
-.chase {
-  position: relative;
-}
-
-.chase:after,
-.chase:before {
+/* INFINITE SCROLLING LOADER */
+.basic:before {
   content: '';
-  height: 30px;
-  width: 30px;
   display: block;
-  animation: out .5s backwards, spin 1.25s .5s infinite ease;
-  border: 5px solid var(--primary);
+  height: 50px;
+  width: 50px;
+  animation: spin .5s infinite linear;
+  border: 6px var(--primary) solid;
+  border-left-color: var(--secondary);
   border-radius: 100%;
-  box-shadow: 0 -40px 0 -5px var(--primary);
-  position: absolute;
-}
-
-.chase:after {
-  animation-delay: 0s, 1.25s;
-}
-
-@keyframes out {
-  from {
-    -webkit-box-shadow: 0 0 0 -5px var(--primary);
-    box-shadow: 0 0 0 -5px var(--primary);
-  }
 }
 
 @keyframes spin {
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }

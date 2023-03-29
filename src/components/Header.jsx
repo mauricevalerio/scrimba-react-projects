@@ -4,6 +4,7 @@ import SearchIcon from "../assets/navbar-icons/search.svg"
 import WatchlistIcon from "../assets/navbar-icons/watchlist.svg"
 import MoviesIcon from "../assets/navbar-icons/movies.svg"
 import SeriesIcon from "../assets/navbar-icons/series.svg"
+import SiteIcon from "../assets/site-icon.svg"
 
 export default function Header() {
     
@@ -34,29 +35,26 @@ export default function Header() {
             icon: MoviesIcon
         },
         {
-            text: "series",
-            linkTo: "series",
+            text: "TV",
+            linkTo: "tv",
             icon: SeriesIcon
         },
     ]
 
-    const navElements = navData.map((navItem, index) => {
-        return <NavLink 
-        to={navItem.linkTo}
-        key={index}
+    const navElements = navData.map((navItem, index) => (
+        <NavLink key={index} to={navItem.linkTo} 
         style={({isActive}) => isActive ? menuStyle : null}
         className="flex gap-2 uppercase hover:scale-105 transition-transform duration-300 ease-out">
-            <img src={navItem.icon} alt={`${navItem.text} Icon`} className="max-w-none w-[15px]"/>
-            <span className="hidden md:block">{navItem.text}</span>
+            <img src={navItem.icon} alt={`${navItem.text} Icon`} className="max-w-none w-[25px] md:w-[15px]"/>
+            <span className="hidden md:block md:text-lg">{navItem.text}</span>
         </NavLink>
-    })
+    ))
 
     return (
-        <header className="p-4">
+        <header className="p-4 lg:px-16">
             <nav className="flex items-center gap-x-4">
-                <Link 
-                to="/">
-                <p className="text-lg">LOGO</p>
+                <Link to="/">
+                    <img src={SiteIcon} alt="Site Icon" className="max-w-none w-[30px]"/>
                 </Link>
                 {navElements}
             </nav>

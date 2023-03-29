@@ -6,14 +6,16 @@ export default function Footer() {
             <p className="text-lg text-center">
                 Built with <a href="https://vitejs.dev/" target="_blank" className="font-bold hover:underline">Vite</a>
                 , <a href="https://reactrouter.com/en/main" target="_blank" className="font-bold hover:underline">React Router</a>
-                , <a href="https://www.npmjs.com/package/react-responsive-carousel" target="_blank" className="font-bold hover:underline">React Responsive Carousel</a>
+                , <a href="https://www.npmjs.com/package/react-responsive-carousel" target="_blank" className="font-bold hover:underline">React Carousel</a>
+                , <a href="https://www.npmjs.com/package/react-infinite-scroll-component" target="_blank" className="font-bold hover:underline">React Infinite Scroll</a>
+                
             </p>
 
             <p className="text-lg text-center">
                 Data sourced from <a href="https://www.themoviedb.org/" target="_blank" className="font-bold hover:underline">The Movie Database</a>
             </p>
             
-            <img src={TmdbLogo} alt="Logo of The Movie Database" className="max-w-xs block mx-auto"/>
+            <img src={TmdbLogo} alt="Logo of The Movie Database" className="max-w-[200px] block mx-auto"/>
         </div>
     )
 }

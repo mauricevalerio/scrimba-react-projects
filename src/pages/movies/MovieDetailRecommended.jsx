@@ -1,4 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom"
+import MovieSeriesFallback from "../../assets/movie-series-fallback.svg"
 
 export default function MovieDetailRecommended() {
     const { recommendedMovies: { results } } = useOutletContext()
