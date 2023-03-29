@@ -77,9 +77,9 @@ export default function Search() {
                 src={item.backdrop_path ? `${import.meta.env.VITE_TMDB_IMAGE_BASE_URL}${item.backdrop_path}` : MovieSeriesFallback} 
                 alt={`Poster for the movie ${item.title || item.name}`} 
                 className="object-cover h-52 rounded-lg hover:scale-105 transition-transform duration-300 ease-out"/>
-                <p className="text-center text-base">{item.title || item.name} ({item.release_date ? item.release_date.slice(0, 4)
+                <p className="text-center text-base">{item.title || item.name} ({item.release_date ? item.release_date.slice(0, 4) || "TBA"
                         : item.first_air_date ?
-                        item.first_air_date.slice(0, 4) 
+                        item.first_air_date.slice(0, 4)  || "TBA"
                         : "TBA"})</p>
         </Link>
     })
