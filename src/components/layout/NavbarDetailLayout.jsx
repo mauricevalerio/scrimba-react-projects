@@ -6,7 +6,7 @@ export default function NavbarDetailLayout() {
         linkTo: "."
     },
     {
-        text: "Casts",
+        text: "Cast",
         linkTo: "casts"
     },
     {
