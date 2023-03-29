@@ -8,7 +8,7 @@ export default function Footer() {
                 , <a href="https://reactrouter.com/en/main" target="_blank" className="font-bold hover:underline">React Router</a>
                 , <a href="https://www.npmjs.com/package/react-responsive-carousel" target="_blank" className="font-bold hover:underline">React Carousel</a>
                 , <a href="https://www.npmjs.com/package/react-infinite-scroll-component" target="_blank" className="font-bold hover:underline">React Infinite Scroll</a>
-                
+                , <a href="https://www.npmjs.com/package/framer-motion" target="_blank" className="font-bold hover:underline">Framer Motion</a>
             </p>
 
             <p className="text-lg text-center">
