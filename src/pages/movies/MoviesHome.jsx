@@ -80,7 +80,7 @@ export default function MoviesHome() {
                         <Link 
                         key={movie.id} 
                         relative="path"
-                        to={`${movie.id}`}
+                        to={`/movies/${movie.id}`}
                         target="_blank"
                         className="flex flex-col flex-wrap w-[350px]">
                             <img 

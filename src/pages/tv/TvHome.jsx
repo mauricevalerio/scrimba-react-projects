@@ -80,7 +80,7 @@ export default function TvHome() {
                         <Link 
                         key={tv.id} 
                         relative="path"
-                        to={`${tv.id}`}
+                        to={`/tv/${tv.id}`}
                         target="_blank"
                         className="flex flex-col flex-wrap w-[350px]">
                             <img 
