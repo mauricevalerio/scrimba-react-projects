@@ -12,7 +12,8 @@ export default function HomeHeroCarousel(props) {
         showStatus={false} 
         showThumbs={false}
         showIndicators={false}
-        infiniteLoop={true}>
+        infiniteLoop={true}
+        >
             {
                 filteredMovies.map(movie => (
                 <Link to={`movies/${movie.id}`} key={movie.id}>

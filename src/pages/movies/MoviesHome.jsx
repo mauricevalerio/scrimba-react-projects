@@ -79,8 +79,8 @@ export default function MoviesHome() {
                     {selectedGenreMovieList.map(movie => (
                         <Link 
                         key={movie.id} 
-                        // relative="path"
-                        to={`/movies/${movie.id}`}
+                        relative="path"
+                        to={`${movie.id}`}
                         target="_blank"
                         className="flex flex-col flex-wrap w-[350px]">
                             <img 
