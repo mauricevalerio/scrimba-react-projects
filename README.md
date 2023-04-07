@@ -1,4 +1,5 @@
-# color-scheme-api
- Scrimba Color Scheme HTML CSS JS APIs
+# Color Scheme Generator
 
-[Color Scheme Generator](https://lustrous-cheesecake-9de9a2.netlify.app/)
+**Scrimba's Frontend Developer Career Path**
+
+Solo Project | Module 9 | Working with APIs
