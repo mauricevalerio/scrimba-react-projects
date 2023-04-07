@@ -1,4 +1,5 @@
-# travel-journal
- Scrimba Travel Journal React
+# Travel Journal
 
- [Travel Journal](https://splendid-peony-346f38.netlify.app/)
+**Scrimba's Frontend Developer Career Path**
+
+Solo Project | Module 11 | React basics
