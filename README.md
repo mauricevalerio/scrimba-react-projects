@@ -1,4 +1,5 @@
-# tindog
- Scrimba Tindog HTML CSS JS
+# Passenger Counter
 
- [Tindog](https://elaborate-swan-15c4f9.netlify.app/)
+**Scrimba's Frontend Developer Career Path**
+
+Solo Project | Module 7 | Next-level JavaScript
