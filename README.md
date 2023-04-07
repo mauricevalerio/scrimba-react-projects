@@ -1,7 +1,5 @@
-# hometown-page
- Scrimba Hometown page HTML & CSS
- 	
-  [Hometown Homepage](https://steady-sfogliatella-e4d5c6.netlify.app)
-  
-  ## Added the following features
-  - Made it responsive
+# Hometown Homepage
+
+**Scrimba's Frontend Developer Career Path**
+
+Solo Project | Module 2 | Web Dev Basics
