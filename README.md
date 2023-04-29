@@ -11,7 +11,7 @@ Clone down this repository. You will need `node` and `npm` installed globally on
 - Installation: `npm install`  
 - Preview & Build: `npm run build` `npm run preview`
 - Start Dev Server: `npm run dev`  
-- Visit App: `https://mauvie.netlify.app/`  
+- [Visit App](https://mauvie.netlify.app/)
 
 ## Reflection
 Rebuilt from scratch the Module 9: APIs solo project from Scrimba's Frontend Developer Career Bootcamp that lasted for a week and was originally written using JavaScript. The goal of this project was to familiarize myself more on the latest React Router V6 and practice muscle memory with basic React. Also learned a new CSS framework Tailwind CSS and familiarized myself with the documentation.
