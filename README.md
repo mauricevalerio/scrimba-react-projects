@@ -11,7 +11,7 @@ Clone down this repository. You will need `node` and `npm` installed globally on
 - Installation: `npm install`  
 - Preview & Build: `npm run build` `npm run preview`
 - Start Dev Server: `npm run dev`  
-- Visit App: `qu1zz1cal.netlify.app/`  
+- [Visit App](qu1zz1cal.netlify.app/)  
 
 ## Reflection
 A solo project under Scrimba's Frontend Developer Career Path Module 11: React Basics and added the following features on top of the basic requirements of the project:
