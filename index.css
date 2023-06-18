@@ -1,8 +1,11 @@
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     background: #1B1924;
@@ -17,27 +20,28 @@ img.logo {
 }
 
 main.container {
-   display: flex;
-   flex-direction: column;
-   gap: 1em;
-   padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em;
 }
 
 div.textbox-container {
     display: flex;
-    gap: 1em;
-    justify-content: space-between;
+    gap: 0.5em;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
     text-align: center;
 }
 
-input, textarea {
+input,
+textarea {
     background: #444059;
     border-radius: 8px;
-    padding: 1em;
+    padding: 1em 0;
     font-family: inherit;
     color: #8F8F8F;
 }
