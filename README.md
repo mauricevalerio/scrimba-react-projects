@@ -30,3 +30,4 @@ A solo project under Scrimba's Frontend Developer Career Path Module 3: Making W
 
 ## Future Improvements
   - Desktop version
+  - Add likes to each endorsements
