@@ -17,7 +17,7 @@ Built with HTML, CSS, JavaScript, and Firebase.
 ## Installation and Setup Instructions
 No required NPM packages required as it is built with HTML, CSS, and Vanilla JavaScript.
 
-<!-- - [Visit App](https://firebase-grocerylist-mobile.netlify.app/) -->
+- [Visit App](https://we-are-the-champions-endorsements.netlify.app/)
 
 ## Reflection
 A solo project under Scrimba's Frontend Developer Career Path Module 3: Making Websites Interactive. Learned Firebase such as the following:
