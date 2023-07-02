@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600;800&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Karla', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-height: 700px;
+  width: 700px;
+  background: #1F2937;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #2a9d8f;
+}
+
+/* HEADER */
+header {
+  max-width: 300px;
+}
+
+span.white-text {
+  color: #FFFFFF;
+}
+
+span.green-text {
+  color: #4ADF86;
+}
+
+p.header-tagline {
+  color: #D5D4D8;
+}
+
+/* FORM */
+form {
+  border-bottom: 2px solid #2F3E53;
+  color: #D5D4D8;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+div.input-container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+button {
+  margin-top: 1em;
+  opacity: 0.95;
+  background: #10B981;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+button:hover {
+  color: #001F3F;
+  background-color: #fff;
+}
+
+div.password-container {
+  background: #273549;
+  border-radius: 6px;
+  padding: 0.5em 0.25em;
+  color: #55F991;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+div.password-container>svg {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.6em;
+  cursor: pointer;
+}
+
+div.password-container>svg:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 0.95rem;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.25em;
+  transition: opacity 0.25s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+}
+
+div.password-container>svg:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
