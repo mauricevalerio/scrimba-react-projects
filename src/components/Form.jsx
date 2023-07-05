@@ -1,12 +1,12 @@
 import { getType } from "../generatePassword"
 import { useState } from "react"
-import { FaCopy } from "react-icons/fa6"
+import Copy from "./Copy"
+// import { FaCopy } from "react-icons/fa6"
 
 export default function Form() {
 
     const [passwordLength, setPasswordLength] = useState(36)
     const [password, setPassword] = useState("")
-    const [isPasswordGenerated, setIsPasswordGenerated] = useState(false)
     const [requirements, setRequirements] = useState({
         "lowercase": true,
         "uppercase": false,
@@ -23,7 +23,6 @@ export default function Form() {
     
     function generatePassword(e) {
         e.preventDefault()
-        setIsPasswordGenerated(true)
 
         let tempPassword = ""
         while (tempPassword.length < parseInt(passwordLength)) {
@@ -36,17 +35,18 @@ export default function Form() {
         }
         setPassword(tempPassword)
     }
-
-    async function copyToClipboard(e) {
-        await navigator.clipboard.writeText(password)
-        e.target.dataset.hover = "Copied!"
-    }
     
     return (
         <>
+            <div className="password-container">
+                <div className="password-text">
+                    {password}
+                </div>
+                <Copy password={password} />
+            </div>
+
             <form onSubmit={generatePassword}>
-                <div className="input-container">
-                    <label htmlFor="passwordLength">Length</label>
+                <div className="range-container">
                     <input 
                     type="range" 
                     min="8" 
@@ -55,33 +55,35 @@ export default function Form() {
                     id="passwordLength" 
                     name="passwordLength"
                     value={passwordLength}
-                    onChange={handlePasswordLength}/> 
-                    <span>{passwordLength}</span>
+                    onChange={handlePasswordLength}
+                    /> 
+                    <span className="password-length">{passwordLength}</span>
                 </div>
 
-                <div className="input-container">
-                    <input 
-                    type="checkbox" 
-                    id="uppercase" 
-                    name="uppercase" 
-                    checked={requirements.uppercase}
-                    onChange={handleRequirements}
-                    className="checkbox-design" />
-                    <label htmlFor="uppercase">Uppercase</label>
-                </div>
+                <div className="checkbox-container">
+                    <label htmlFor="uppercase">
+                        <input 
+                        type="checkbox" 
+                        id="uppercase" 
+                        name="uppercase" 
+                        checked={requirements.uppercase}
+                        onChange={handleRequirements}
+                        className="checkbox-design" />
+                    Uppercase
+                    </label>
 
-                <div className="input-container">
-                    <input 
-                    type="checkbox" 
-                    id="symbols" 
-                    name="symbols"
-                    checked={requirements.symbols}
-                    onChange={handleRequirements}
-                    className="checkbox-design" />
-                    <label htmlFor="symbols">Symbols</label>
-                </div>
+                    <label htmlFor="symbols">
+                        <input 
+                        type="checkbox" 
+                        id="symbols" 
+                        name="symbols"
+                        checked={requirements.symbols}
+                        onChange={handleRequirements}
+                        className="checkbox-design" />
+                    Symbols
+                    </label>
 
-                <div className="input-container">
+                    <label htmlFor="numbers">
                     <input 
                     type="checkbox" 
                     id="numbers" 
@@ -89,23 +91,12 @@ export default function Form() {
                     checked={requirements.numbers}
                     onChange={handleRequirements}
                     className="checkbox-design" />
-                    <label htmlFor="numbers">Numbers</label>
+                    Numbers
+                    </label>
                 </div>
-                
-                <div>
-                    <button>Generate password</button>
-                </div>
+
+                <button>Generate password</button>
             </form>
-            {isPasswordGenerated 
-                && 
-            <div className="password-container">{password} 
-                <FaCopy 
-                className="clipboard"
-                data-hover="" 
-                onMouseOver={(e) => e.target.dataset.hover = "Copy"}
-                onClick={copyToClipboard}
-                />
-            </div>}
         </>
     )
 }

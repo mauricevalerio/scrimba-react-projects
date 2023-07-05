@@ -1,10 +1,10 @@
+import PasswordLogo from "../assets/password-logo.svg"
+
 export default function Header() {
     return (
         <header>
-            <h1>
-                <span className="white-text">Generate a</span> <span className="green-text">random password</span>
-            </h1>
-            <p className="header-tagline">Never use an insecure password again.</p>
+            <h1>Password Generator</h1>
+            <img src={PasswordLogo} alt="Passport SVG black and white" />
 		</header>
     )
 }
