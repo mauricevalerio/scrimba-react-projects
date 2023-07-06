@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, update, get } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-database.js"
 
 const firebaseConfig = {
     databaseURL: "https://realtime-database-b5356-default-rtdb.firebaseio.com/",
@@ -21,6 +21,7 @@ publishButtonEl.addEventListener("click", function () {
     let inputValue = textareaFieldEl.value
     let fromValue = fromFieldEl.value
     let toValue = toFieldEl.value
+    let numberOfLikes = 0
 
     if (inputValue && fromValue && toValue) {
 
@@ -31,10 +32,29 @@ publishButtonEl.addEventListener("click", function () {
         push(endorsementsRef, {
             from: fromValue,
             to: toValue,
-            message: inputValue
+            message: inputValue,
+            likes: numberOfLikes
         })
     }
 })
+
+function addHeartClickListener(e) {
+    const dataRef = ref(database, 'endorsements/' + e.target.dataset.id)
+
+    const updates = {}
+
+    get(dataRef)
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                updates["/endorsements/" + e.target.dataset.id] = {
+                    ...snapshot.val(),
+                    likes: snapshot.val().likes += 1
+                }
+                return update(ref(database), updates)
+            }
+        })
+        .catch((error) => console.error(error))
+}
 
 onValue(endorsementsRef, function (snapshot) {
     if (snapshot.exists()) {
@@ -48,9 +68,20 @@ onValue(endorsementsRef, function (snapshot) {
             <p>${things[i][1].message}</p>
             <div class="item-footer">
                 <p class="bold">From: ${things[i][1].from}</p>
+                <div class="likes">
+                    <img 
+                    src="./assets/heart.svg" 
+                    alt="Black heart" 
+                    class="heart" 
+                    data-id="${things[i][0]}"/>
+                    <p class="bold">${things[i][1].likes}</p>
+                </div>
             </div>
             </li>`
+        }
 
+        for (let heartEventListener of document.querySelectorAll("div.likes > img.heart")) {
+            heartEventListener.addEventListener("click", addHeartClickListener)
         }
     } else {
         endorsementsEl.innerHTML = "No endorsements yet"

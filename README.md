@@ -1,18 +1,12 @@
-# firebase-we-are-the-champions
+# We Are The Champions
 
+The application is called "We Are The Champions" but it's simply a mobile-like app to add endorsement messages.
 
-
-## Firebase We Are The Champions
-
-A Web Development refresher after a 3 week break for myself.
-
-Mobile-like app to add endorsement messages
-
-Built with HTML, CSS, JavaScript, and Firebase. 
+Built with HTML, CSS, Vanilla JavaScript, and Firebase. 
 
 **Best used with smartphones.** See below on how to add it like a mobile application. 
 
-<!-- ![image info](assets/guide.jpg) -->
+![image info](assets/guide.jpg)
 
 ## Installation and Setup Instructions
 No required NPM packages required as it is built with HTML, CSS, and Vanilla JavaScript.
@@ -30,4 +24,3 @@ A solo project under Scrimba's Frontend Developer Career Path Module 3: Making W
 
 ## Future Improvements
   - Desktop version
-  - Add likes to each endorsements

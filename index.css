@@ -19,22 +19,21 @@ img.logo {
     margin: 0 auto;
 }
 
-main.container {
+h1,
+h2 {
+    margin: 0;
+    text-align: center;
+}
+
+main {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
     padding: 0.5em;
 }
 
 div.textbox-container {
     display: flex;
-    gap: 0.5em;
-}
-
-h1,
-h2 {
-    margin: 0;
-    text-align: center;
 }
 
 input,
@@ -48,7 +47,6 @@ textarea {
 input {
     text-align: center;
     padding: 1em 0;
-    flex: 1;
 }
 
 input:focus {
@@ -58,12 +56,12 @@ input:focus {
 textarea {
     resize: none;
     width: 100%;
-    height: 118px;
+    height: 120px;
     outline: none;
     padding: 1em;
 }
 
-.publish-button {
+button {
     background: #28A9F1;
     font-family: inherit;
     border: none;
@@ -77,17 +75,19 @@ textarea {
 
 ul {
     list-style-type: none;
+    margin: 0;
     padding: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 ul li {
-    background: #FFFFFF;
+    background: #FFF;
     color: #1B1924;
     padding: 1em;
+    border-radius: 3px;
 }
 
 p.bold {
@@ -101,8 +101,13 @@ div.item-footer {
     align-items: center;
 }
 
-.heart-button {
-    border: none;
-    background: none;
+img.heart {
+    display: block;
     cursor: pointer;
+}
+
+div.likes {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
 }
