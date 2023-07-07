@@ -69,8 +69,7 @@ onValue(endorsementsRef, function (snapshot) {
             <div class="item-footer">
                 <p class="bold">From: ${things[i][1].from}</p>
                 <div class="likes">
-                    <img 
-                    src="assets/heart.png" 
+                    <img src="assets/heart.png" 
                     alt="Black heart" 
                     class="heart" 
                     data-id="${things[i][0]}"/>
