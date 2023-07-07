@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1B1924;
+    border-radius: 10px;
+}
+
 html,
 body {
     margin: 0;
@@ -25,15 +38,21 @@ h2 {
     text-align: center;
 }
 
-main {
+main,
+form,
+div.endorsements-container {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+}
+
+main {
     padding: 0.5em;
 }
 
 div.textbox-container {
     display: flex;
+    width: 100%;
 }
 
 input,
@@ -47,6 +66,7 @@ textarea {
 input {
     text-align: center;
     padding: 1em 0;
+    flex: 1;
 }
 
 input:focus {
@@ -110,4 +130,59 @@ div.likes {
     display: flex;
     align-items: center;
     gap: 0.25em;
+}
+
+@media (width>768px) {
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    ul {
+        padding-right: 0.5em;
+    }
+
+    main {
+        flex-direction: row;
+        flex: 0.75;
+        gap: 1em;
+    }
+
+    form {
+        justify-content: space-between;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    input {
+        flex: unset;
+    }
+
+    div.textbox-container {
+        justify-content: space-between;
+    }
+
+    div.textbox-container,
+    button {
+        width: unset;
+    }
+
+    form,
+    div.endorsements-container {
+        flex: 1;
+    }
+
+    div.endorsements-container {
+        max-height: 600px;
+        overflow-x: auto;
+        flex: 1.25;
+    }
 }

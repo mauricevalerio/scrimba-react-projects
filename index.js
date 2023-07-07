@@ -16,8 +16,8 @@ const endorsementsEl = document.getElementById("endorsements")
 const fromFieldEl = document.getElementById("from-name")
 const toFieldEl = document.getElementById("to-name")
 
-publishButtonEl.addEventListener("click", function () {
-
+publishButtonEl.addEventListener("click", function (e) {
+    e.preventDefault()
     let inputValue = textareaFieldEl.value
     let fromValue = fromFieldEl.value
     let toValue = toFieldEl.value
@@ -70,7 +70,7 @@ onValue(endorsementsRef, function (snapshot) {
                 <p class="bold">From: ${things[i][1].from}</p>
                 <div class="likes">
                     <img 
-                    src="./assets/heart.svg" 
+                    src="./assets/heart.png" 
                     alt="Black heart" 
                     class="heart" 
                     data-id="${things[i][0]}"/>

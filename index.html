@@ -18,21 +18,25 @@
     <body>
         
         <main>
-            <img src="assets/Freddie.png" alt="Freddie Mercury Logo" class="logo"/>
-            <h1>We are the Champions</h1>
+            <form autocomplete="off">
+                <img src="assets/Freddie.png" alt="Freddie Mercury Logo" class="logo"/>
+                <h1>We are the Champions</h1>
+                
+                <textarea id="textarea-field" placeholder="Write your endorsement here" required></textarea>
+                
+                <div class="textbox-container">
+                    <input type="text" id="from-name" placeholder="From" required />
+                    <input type="text" id="to-name" placeholder="To" required />
+                </div>
+                
+                <button id="publish-button">Publish</button>
+            </form>
             
-            <textarea id="textarea-field" placeholder="Write your endorsement here" required></textarea>
-            
-            <div class="textbox-container">
-                <input type="text" id="from-name" placeholder="From" />
-                <input type="text" id="to-name" placeholder="To" />
+            <div class="endorsements-container">
+                <h2>- Endorsements -</h2>
+                <ul id="endorsements">
+                </ul>
             </div>
-            
-            <button id="publish-button">Publish</button>
-            
-            <h2>- Endorsements -</h2>
-            <ul id="endorsements">
-            </ul>
         </main>
         <script src="index.js" type="module"></script>
     </body>
