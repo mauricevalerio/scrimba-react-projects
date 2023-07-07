@@ -121,9 +121,10 @@ div.item-footer {
     align-items: center;
 }
 
-img.heart {
+p.heart {
     display: block;
     cursor: pointer;
+    margin: 0;
 }
 
 div.likes {

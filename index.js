@@ -69,17 +69,18 @@ onValue(endorsementsRef, function (snapshot) {
             <div class="item-footer">
                 <p class="bold">From: ${things[i][1].from}</p>
                 <div class="likes">
-                    <img src="heart.png" 
-                    alt="Black heart" 
+                    <p
                     class="heart" 
-                    data-id="${things[i][0]}"/>
+                    data-id="${things[i][0]}"
+                    >🖤
+                    </p>
                     <p class="bold">${things[i][1].likes}</p>
                 </div>
             </div>
             </li>`
         }
 
-        for (let heartEventListener of document.querySelectorAll("div.likes > img.heart")) {
+        for (let heartEventListener of document.querySelectorAll("div.likes > p.heart")) {
             heartEventListener.addEventListener("click", addHeartClickListener)
         }
     } else {
