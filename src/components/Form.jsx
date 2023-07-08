@@ -1,7 +1,6 @@
-import { getType } from "../generatePassword"
+import { getType } from "./generatePassword"
 import { useState } from "react"
 import Copy from "./Copy"
-// import { FaCopy } from "react-icons/fa6"
 
 export default function Form() {
 
@@ -23,15 +22,21 @@ export default function Form() {
     
     function generatePassword(e) {
         e.preventDefault()
-
         let tempPassword = ""
+        
+        //gets all the properties/method names
+        const keys = Object.keys(getType)
+
         while (tempPassword.length < parseInt(passwordLength)) {
 
-            //stores the function chsen to typeAdder
-            let typeAdder = getType[Math.floor(Math.random() * getType.length)]
+            //generates random property of the object
+            let randomProperty = keys[Math.floor(Math.random() * keys.length)]
 
-            //references the function name using bracket notation
-            if (requirements[typeAdder.name]) tempPassword += typeAdder()
+            //gets the method name
+            if (requirements[randomProperty]) {
+                //runs the method and returns a character for the password
+                tempPassword += getType[randomProperty]()
+            }
         }
         setPassword(tempPassword)
     }
@@ -100,3 +105,5 @@ export default function Form() {
         </>
     )
 }
+
+
