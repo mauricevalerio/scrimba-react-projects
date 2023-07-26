@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-TEST
-=======
 # We Are The Champions
+
+Scrimba's Frontend Developer Career Path | Module 3 | Making Websites Interactive
 
 The application is called "We Are The Champions" but it's simply a mobile-like app to add endorsement messages.
 
@@ -27,4 +26,3 @@ A solo project under Scrimba's Frontend Developer Career Path Module 3: Making W
 
 ## Future Improvements
   - Desktop version
->>>>>>> repoA/main
