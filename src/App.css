@@ -1,0 +1,22 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .app-container {
+        padding: 0 15%;
+    }
+}
