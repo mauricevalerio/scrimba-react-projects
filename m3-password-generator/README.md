@@ -1,6 +1,6 @@
 # Password Generator
 
-Solo Project for Module 3 - Making Websites Interactive under the **Scrimba's Frontend Developer Career Path**
+Scrimba's Frontend Developer Career Path | Module 3 | Making Websites Interactive
 
 A front-end web application to generate secure random passwords with the ability to include numbers, symbols, and uppercase letters.
 
