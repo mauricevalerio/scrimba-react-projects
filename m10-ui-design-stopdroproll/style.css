@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(194, 194, 194, 1) 0%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.container {
+  font-family: "Montserrat";
+  padding: 5em 10em;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  height: 50vh;
+  grid-gap: 3em;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+h1:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  background: red;
+  left: -1em;
+  height: 100%;
+}
+
+h1:after {
+  position: absolute;
+  content: "";
+  background: center/cover url("stop.png");
+  width: 3em;
+  height: 3em;
+  right: -1em;
+}
+
+p {
+  position: relative;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+p:after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  background: red;
+  right: -1em;
+  height: 100%;
+}
+
+.stop {
+  color: #fd5e5c;
+}
+
+.drop {
+  color: #212121;
+}
+
+.roll {
+  color: #ffbc49;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0.5em;
+    text-align: center;
+  }
+  h1,
+  p {
+    text-align: center;
+  }
+
+  h1:after {
+    background: none;
+  }
+}
+/*
+
+- White Space
+- Color 
+- Contrast 
+- Scale
+- Alignment
+- Typography
+- Visual Hierarchy
+
+*/
