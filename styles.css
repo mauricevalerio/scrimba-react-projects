@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F6F7FB 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75em;
+}
+
+.profile-icon,
+.message-icon {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.tindog-icon {
+    max-width: 80px;
+    max-height: 40px;
+
+}
+
+.tindog-icon.scale-logo {
+    animation-name: scale-logo;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes scale-logo {
+    to {
+        transform: translateY(100px) scale(1);
+    }
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 1em;
+}
+
+.btn {
+    border-radius: 50%;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px #E9E9EA;
+    padding: 1.5em;
+    cursor: pointer;
+    transition: background 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.btn img {
+    max-width: 30px;
+    max-height: 25px;
+}
+
+.cross-button:hover {
+    background: #FFE7EF;
+    box-shadow: 0px 10px 20px #EDD9DF;
+}
+
+.heart-button:hover {
+    background: #DBFFF4;
+    box-shadow: 0px 10px 20px #CCF1E6;
+}
+
+/* DOG PROFILE */
+.dog-profile-container {
+    position: relative;
+}
+
+.dog-profile-container.like-animation {
+    animation-name: move-right;
+    animation-duration: 2s;
+}
+
+.dog-profile-container.dislike-animation {
+    animation-name: move-left;
+    animation-duration: 2s;
+}
+
+@keyframes move-right {
+    to {
+        transform: translate(300px, 25px);
+        opacity: 0;
+    }
+}
+
+@keyframes move-left {
+    to {
+        transform: translate(-300px, 25px);
+        opacity: 0;
+    }
+}
+
+.dog-avatar {
+    max-width: 100%;
+    display: block;
+}
+
+.dog-info-container {
+    position: absolute;
+    bottom: 1em;
+    left: 0.25em;
+}
+
+.dog-name,
+.dog-bio {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.dog-name {
+    color: #F8F8F8;
+    font-size: 1.5rem;
+}
+
+.dog-bio {
+    color: #B7B7B7;
+    font-size: 0.75rem;
+}
+
+/* BADGES */
+.badge {
+    position: absolute;
+    max-width: 125px;
+    top: 2em;
+}
+
+.dislike-badge {
+    left: 0.5em;
+    transform: rotate(330deg)
+}
+
+.like-badge {
+    right: 0.5em;
+    transform: rotate(-330deg)
+}
+
+/* End Message */
+.end-message-container {
+    text-align: center;
+    padding: 5em;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .dog-avatar {
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dog-name {
+        font-size: 2.125rem;
+    }
+
+    .dog-bio {
+        font-size: 1.125rem;
+    }
+}
