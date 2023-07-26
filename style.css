@@ -1,0 +1,184 @@
+@import url('https://fonts.cdnfonts.com/css/cursed-timer-ulil');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1d3557;
+}
+
+/* CONTAINERS */
+#main-container {
+	border-radius: 15px;
+	width: 50%;
+	background: #1d3557;
+	box-shadow: 0px 0px 5px 2px #457b9d;
+}
+
+#header-container {
+	padding-top: 20px;
+	min-height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	justify-content: space-between;
+	font-family: 'Cursed Timer ULiL', sans-serif;
+	color: #EEEEEE;
+}
+
+.game-buttons-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	gap: 10px;
+}
+
+#scoreboard-container {
+	/*HOME and GUEST Container*/
+	max-height: 500px;
+	padding: 68px 82px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.content-container {
+	/* HOME and GUEST subcontainer*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.score-container {
+	/*score with the black background and display score */
+	width: 160px;
+	background: #000;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-container {
+	width: 160px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-popup {
+	margin-top: 20px;
+	padding: 10px;
+	display: none;
+	position: relative;
+	border: 1px solid #f1f1f1;
+}
+
+/* UTILITY */
+.content-spacing {
+	/* spacing inside the content container */
+	margin-bottom: 25px;
+}
+
+.text-score-utility {
+	color: #F94F6D;
+	opacity: 0.50;
+	font-size: 6rem;
+	font-family: 'Cursed Timer ULiL', sans-serif;
+}
+
+/* TYPOGRAPHY */
+#timer-text {
+	font-size: 2rem;
+}
+
+.header-text,
+#header-container h6,
+#display-winner {
+	color: #EEEEEE;
+	font-family: 'Verdana';
+}
+
+/* BUTTONS */
+.button-design {
+	padding: 0.5em;
+	border: 2px solid #9AABD8;
+	border-radius: 5px;
+	font-size: 1rem;
+	color: #f1faee;
+	background: transparent;
+	cursor: pointer;
+	transition: border 0.25s;
+}
+
+.button-score {
+	min-height: 45px;
+	min-width: 45px;
+	font-family: 'Cursed Timer ULiL', sans-serif;
+}
+
+.button-design:hover:enabled {
+	border: 2px solid #FFF;
+}
+
+.button-design:active:enabled {
+	border: 2px solid #a8dadc;
+	color: #a8dadc;
+}
+
+.button-design:disabled {
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+}
+
+.highlight-score-leader {
+	opacity: 1;
+}
+
+/* FORM TIMER */
+input[type="number"] {
+	border-radius: 5px;
+	outline: none;
+	max-width: 50px;
+	font-family: 'Cursed Timer ULiL';
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+	body {
+		background: #1B244A;
+		width: 100%;
+	}
+
+	#main-container {
+		width: 100%;
+	}
+
+	#scoreboard-container {
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 50px;
+	}
+
+	.content-container:first-child {
+		padding-bottom: 20px;
+		border-bottom: 5px solid red;
+	}
+
+	.content-container:last-child {
+		padding-top: 20px;
+	}
+}

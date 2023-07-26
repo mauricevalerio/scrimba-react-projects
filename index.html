@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		
+		<link rel="stylesheet" href="style.css">
+		
+		<title>Basketball Scoreboard</title>
+	</head>
+
+	<body>
+		<main id="main-container">
+			<header id="header-container">
+				<h4 id="timer-text">00:00</h4>
+				<div class="game-buttons-container">
+					<button id="set-timer" class="button-design">Set Timer</button>
+					<button id="new-game" class="button-design">Start Game</button>
+					<button id="pause-time" class="button-design">Pause Time</button>
+					<button id="resume-time" class="button-design">Resume Time</button>
+					<button id="reset-score" class="button-design">Reset Score</button>
+				</div>
+				<p id="display-winner"></p>
+				<form action="/" id="set-timer-form" class="form-popup">
+					
+					<label for="minutes">Minutes</label>
+					<input type="number" id="minutes" maxlength="2" required>
+					<label for="seconds">Seconds</label>
+					<input type="number" id="seconds" maxlength="2" required>
+					<button id="submit-timer" class="button-design" type="submit">Submit</button>
+					<button id="close-timer" class="button-design">Close</button>
+					<p id="form-timer-error-msg"></p>
+				</form>
+			</header>
+
+			<div id="scoreboard-container">
+				<section class="content-container">
+					<h2 class="header-text content-spacing">HOME</h2>
+					<div class="score-container content-spacing">
+						<p id="home-score" class="text-score-utility">0</p>
+					</div>
+					<div class="button-container">
+						<button id="home-add-one" class="button-design button-score">+1</button>
+						<button id="home-add-two" class="button-design button-score">+2</button>
+						<button id="home-add-three" class="button-design button-score">+3</button>
+					</div>
+				</section>
+				
+				<section class="content-container">
+					<h2 class="header-text content-spacing">GUEST</h2>
+					<div class="score-container content-spacing">
+						<p id="guest-score" class="text-score-utility">0</p>
+					</div>
+					<div class="button-container">
+						<button id="guest-add-one" class="button-design button-score">+1</button>
+						<button id="guest-add-two" class="button-design button-score">+2</button>
+						<button id="guest-add-three" class="button-design button-score">+3</button>
+					</div>
+				</section>
+			</div>
+	
+		</main>
+		<script src="app.js"></script>
+	</body>
+
+</html>
