@@ -1,0 +1,84 @@
+.app {
+  position: relative;
+}
+
+.landing-page {
+  padding: 1em;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+.game-caption {
+  color: #293264;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.game-caption {
+  margin-top: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.btn {
+  font-family: inherit;
+  color: #FFF;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.start-game-btn {
+  margin-top: 0.5em;
+  background: #293264;
+  padding: 1em 2.5em;
+}
+
+main.quiz-container {
+  padding: 0.75em;
+}
+
+/* IMAGES */
+
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+
+.top-blob {
+  right: 0;
+}
+
+.bottom-blob {
+  left: 0;
+  bottom: 0;
+}
+
+@media (width >= 568px) {
+  .landing-page {
+    justify-content: center;
+  }
+}
+
+@media (width >= 768px) {
+  main.quiz-container {
+    padding: 5em 10%;
+  }
+}
+
+@media (width >= 1024px) {
+  main.quiz-container {
+    padding: 5em 15%;
+  }
+  .blob {
+    width: 15%;
+  }
+}

@@ -1,0 +1,103 @@
+.quiz-item-container {
+    padding: 0.75em;
+    border-bottom: 2px solid #DBDEF0;
+}
+
+.choices-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75em;
+}
+
+/* QUESTION */
+h3.question {
+    font-size: 1.35rem;
+    color: #293264;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+/* CHOICES STYLING */
+.selected-choice {
+    background: #D6DBF5;
+}
+
+.choice {
+    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    padding: 0.5em;
+    width: 80%;
+}
+
+.correct-choice {
+    background: #94D7A2;
+}
+
+.wrong-choice {
+    background: #F8BCBC;
+}
+
+.disable-events {
+    pointer-events: none;
+}
+
+div.marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.marker > p {
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+.marks {
+    font-weight: 700;
+    padding: 0.155em;
+    border-radius: 50%;
+}
+
+.check-mark {
+    background: #94D7A2;
+}
+
+.cross-mark {
+    background: #F8BCBC;
+}
+
+@media (width >= 568px) and (width <= 768px) {
+    .choices-container {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        place-items: center;
+    }
+    div.marker {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (width > 768px) {
+    .quiz-item-container {
+        padding: 1.5em 0;
+    }
+    h3.question {
+        text-align: left;
+    }
+    .choices-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .choice {
+        width: auto;
+    }
+    div.marker {
+        margin: 0 0 0 auto; 
+    }
+}
