@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;600;800&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  height: 0.35em;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a9d8f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4ADF86;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Karla', sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  background: #1F2937;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #2a9d8f;
+}
+
+/* HEADER */
+header {
+  margin: 1em 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header>img {
+  width: 75px;
+  height: 75px;
+  order: -1;
+}
+
+h1 {
+  color: #4ADF86;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  font-size: 2.75rem;
+}
+
+/* FORM */
+form {
+  border-bottom: 2px solid #2F3E53;
+  color: #D5D4D8;
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+div.range-container {
+  display: flex;
+  margin: 1em 0;
+  gap: 0.25em;
+}
+
+span.password-length {
+  font-size: 1.5rem;
+}
+
+/* Range Styling */
+input[type="range"] {
+  flex: 2;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #2a9d8f;
+  border-radius: 1em;
+  height: 0.5rem;
+}
+
+input[type="range"]::-moz-range-track {
+  background: #2a9d8f;
+  border-radius: 1em;
+  height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px;
+  background-color: #2F3E53;
+  height: 1rem;
+  width: 1rem;
+}
+
+/* Checkbox Styling */
+
+div.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5em;
+  font-size: 1.5rem;
+}
+
+label {
+  display: flex;
+  gap: 0.25em;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #1F2937;
+  margin: 0;
+  font: inherit;
+  width: 1em;
+  height: 1em;
+  border: 0.15em solid #2a9d8f;
+  border-radius: 0.15em;
+  transform: translateY(0.085em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  width: 0.75em;
+  height: 0.75em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #55F991;
+}
+
+input[type="checkbox"]:checked:before {
+  transform: scale(1);
+}
+
+input,
+label {
+  cursor: pointer;
+}
+
+/* Button Styling */
+
+button {
+  display: block;
+  margin-top: 1em;
+  opacity: 0.95;
+  background: #10B981;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  color: #FFF;
+  font-family: inherit;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all .5s ease;
+  width: 100%;
+}
+
+button:hover {
+  color: #001F3F;
+  background-color: #fff;
+}
+
+/* PASSWORD OUTPUT */
+div.password-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+div.password-text {
+  flex: 2;
+  height: 60px;
+  background: #273549;
+  color: #55F991;
+  border: 3px solid #2a9d8f;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  overflow: auto hidden;
+  white-space: nowrap;
+  padding: 0.5em;
+}
+
+div.clipboard {
+  cursor: pointer;
+  position: relative;
+}
+
+div.clipboard>span {
+  position: absolute;
+  z-index: 1;
+  bottom: -25px;
+  right: 0;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.25em;
+  font-size: 0.85rem;
+}
+
+svg {
+  width: 2em;
+  height: 2em;
+}
+
+
+@media (width>568px) {
+  header {
+    gap: 1em;
+  }
+
+  div.checkbox-container {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  label {
+    display: inline-flex;
+  }
+}
+
+@media (width>768px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    max-width: 600px;
+    height: unset;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  button,
+  div.checkbox-container,
+  span.password-length {
+    font-size: 1.25rem;
+  }
+
+  button {
+    width: unset;
+  }
+}
