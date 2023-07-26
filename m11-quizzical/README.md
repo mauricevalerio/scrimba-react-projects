@@ -1,5 +1,7 @@
 ## Quizzical
 
+Scrimba's Frontend Developer Career Path | Module 1 | React Basics
+
 A web-based game that pulls questions trivia data from [Open Trivia Database](https://opentdb.com/api_config.php)
 
 Built HTML, CSS, and React. Used Vite for bundling the code.
