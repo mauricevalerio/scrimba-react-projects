@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	height: 100vh;
+	background: gray;
+	padding: 0 15%;
+	font-family: Arial;
+}
+
+/*HEADER STYLING*/
+#header-container {
+	height: 30%;
+	background: center/cover url("imgs/header-japan-background.jpg");
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#header-text {
+	background: #1D3557;
+	border-radius: 10px;
+	padding: 5px 12px;
+}
+
+#subheader-text {
+	background: #457B9D;
+	border-radius: 10px;
+	padding: 8px 29px;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.header-text-utility {
+	color: #FFF;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/*ACTIVITIES STYLING*/
+#activities-container {
+	min-height: 40%;
+	background: #F1FAEE;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 0;
+}
+
+#activities-header {
+	margin-bottom: 30px;
+}
+
+#activities-content-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.activities-item-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 350px;
+}
+
+.activities-image-size {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+
+#activities-subheader {
+	font-weight: bold;
+}
+
+.activities-content-spacing {
+	margin-bottom: 10px;
+}
+
+/*CSS TEXT UTILITY FOR BOTH ACTIVITIES AND GUIDE*/
+.activities-guide-text-utility {
+	text-align: center;
+	color: #1D3557;
+}
+
+/*GUIDE STYLING*/
+#guide-container {
+	min-height: 30%;
+	background: #FFFFFF;
+	padding: 25px 250px;
+	display: flex;
+	justify-content: center;
+}
+
+#guide-content-container {
+	background: #A8DADC;
+	border-radius: 10px;
+	border-bottom: 8px solid #1D3557;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 20px 10px;
+}
+
+#guide-info-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 200px;
+}
+
+#guide-picture {
+	width: 200px;
+}
+
+#guide-description {
+	font-style: italic;
+}
+
+#guide-name {
+	font-weight: bold;
+}
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 1300px) {
+	body {
+		padding: 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	#activities-content-container {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+@media (max-width: 480px) {
+	#header-container {
+		padding: 0 5px;
+	}
+
+	.activities-guide-text-utility {
+		font-size: 0.75rem;
+	}
+
+	#guide-container {
+		padding: 5px 0;
+	}
+
+	#guide-picture {
+		width: 100px;
+	}
+
+	#guide-content-container {
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+}
