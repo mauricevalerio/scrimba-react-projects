@@ -1,5 +1,9 @@
 ## Movie Watchlist
 
+Scrimba's Frontend Developer Career Path | Module 9 | Working with APIs
+
+Based on the solo project of Module of Scrimba's Frontend Developer Career Path however everything is designed and written differently. The only thing I've referenced is the project concept itself.
+
 A web application that pulls TV and movie data from [TMDB](https://www.themoviedb.org/) and users have the option to add and remove watchlist and saved to local storage for data persistence.
 
 Built with HTML, Tailwind CSS, and React.
