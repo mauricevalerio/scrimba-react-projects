@@ -2,6 +2,8 @@
 
 Scrimba's Frontend Developer Career Path | Module 3 | Making Websites Interactive
 
+Migrated Vanilla JavaScript code to React.
+
 A front-end web application to generate secure random passwords with the ability to include numbers, symbols, and uppercase letters.
 
 ## Installation and Setup Instructions
