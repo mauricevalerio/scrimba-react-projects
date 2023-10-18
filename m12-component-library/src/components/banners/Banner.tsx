@@ -35,7 +35,7 @@ export const Banner: React.FC<BannerProp> & {
         <BannerContext.Provider value={{ status }}>
             <div className={`banner banner__${status?.toLowerCase()}`}>
                 <img src={logo} alt={`Banner logo ${status}`} />
-                <div>{children}</div>
+                <div className='text__container'>{children}</div>
             </div>
         </BannerContext.Provider>
     )
