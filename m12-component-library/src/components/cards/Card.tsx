@@ -28,7 +28,7 @@ export const Card: React.FC<CardProp> & {
     Title: typeof CardTitle,
     Content: typeof CardContent
 } = ({ icon, iconBackground, titleColor, contentColor, cardBackground, children }) => {
-    console.log(icon)
+
     return (
         <CardContext.Provider value={{ titleColor, contentColor }}>
             <div className='card' style={{ backgroundColor: `${cardBackground}` }}>
