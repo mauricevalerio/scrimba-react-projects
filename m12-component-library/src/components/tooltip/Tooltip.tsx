@@ -22,7 +22,7 @@ export const TooltipContext = createContext<DefaultContext>({
 
 export const useTooltipContext = () => useContext(TooltipContext)
 
-function boldContentLookup(variant: 'NORMAL' | 'BLUE' | 'PINK' | 'GREEN' | undefined) {
+function boldBgLookup(variant: 'NORMAL' | 'BLUE' | 'PINK' | 'GREEN' | undefined) {
     let variantStyle: string = ''
     switch (variant) {
         case 'NORMAL':
@@ -45,7 +45,7 @@ function boldContentLookup(variant: 'NORMAL' | 'BLUE' | 'PINK' | 'GREEN' | undef
     return variantStyle
 }
 
-function lightContentLookup(variant: 'NORMAL' | 'BLUE' | 'PINK' | 'GREEN' | undefined) {
+function lightBgLookup(variant: 'NORMAL' | 'BLUE' | 'PINK' | 'GREEN' | undefined) {
     let variantStyle: string = ''
     switch (variant) {
         case 'NORMAL':
@@ -73,13 +73,13 @@ export const Tooltip: React.FC<TooltipProp> & {
     Content: typeof TooltipContent
 } = ({ style, variant, children }) => {
 
-    const bgStyle = style?.toUpperCase() === 'BOLD' ? boldContentLookup(variant)
-        : style?.toUpperCase() === 'LIGHT' ? lightContentLookup(variant)
-            : boldContentLookup(variant)
+    const bgStyle = style?.toUpperCase() === 'BOLD' ? boldBgLookup(variant)
+        : style?.toUpperCase() === 'LIGHT' ? lightBgLookup(variant)
+            : boldBgLookup(variant)
 
     return (
         <TooltipContext.Provider value={{ style, variant }}>
-            <div className='tooltip' style={{ backgroundColor: `${bgStyle}` }}>
+            <div className={`tooltip ${style?.toLowerCase()}__${variant?.toLowerCase()}`} style={{ backgroundColor: `${bgStyle}` }}>
                 <div><TooltipLogo /></div>
                 <div>{children}</div>
                 <div><TooltipCrossLogo /></div>

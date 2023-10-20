@@ -280,10 +280,42 @@
   &::after {
     content: '';
     display: inline-block;
-    width: 4rem;
-    height: 2rem;
+    width: 2rem;
+    height: 1rem;
     position: absolute;
-    bottom: -2rem;
+    bottom: -1rem;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
+}
+
+.bold__normal::after {
+  background: #262626;
+}
+
+.bold__blue::after {
+  background: #1E40AF;
+}
+
+.bold__pink::after {
+  background: #A9229B;
+}
+
+.bold__green::after {
+  background: #47AA5D;
+}
+
+.light__normal::after {
+  background: #FFF;
+}
+
+.light__blue::after {
+  background: #E0E7FF;
+}
+
+.light__pink::after {
+  background: #FFF3FC;
+}
+
+.light__green::after {
+  background: #E7FFF3;
 }
