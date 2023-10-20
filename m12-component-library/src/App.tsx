@@ -2,6 +2,7 @@ import Badge from './components/badges'
 import Banner from './components/banners'
 import Card from './components/cards'
 import Testimonial from './components/testimonials'
+import Tooltip from './components/tooltip'
 import { FaAccessibleIcon } from 'react-icons/fa'
 
 export default function App() {
@@ -88,6 +89,55 @@ export default function App() {
           <Testimonial.Role>Workcation, CTO</Testimonial.Role>
         </Testimonial>
       </div>
+
+      <div className='tooltip__container'>
+
+        <div className='tooltip__container__inner'>
+          <Tooltip style='BOLD' variant='NORMAL'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+          <Tooltip style='BOLD' variant='BLUE'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+          <Tooltip style='BOLD' variant='PINK'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+          <Tooltip style='BOLD' variant='GREEN'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+        </div>
+
+        <div className='tooltip__container__inner'>
+          <Tooltip style='LIGHT' variant='NORMAL'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+
+          <Tooltip style='LIGHT' variant='BLUE'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+
+          <Tooltip style='LIGHT' variant='PINK'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+
+          <Tooltip style='LIGHT' variant='GREEN'>
+            <Tooltip.Title>Archive notes</Tooltip.Title>
+            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+          </Tooltip>
+        </div>
+
+      </div>
+      <Tooltip>
+        <Tooltip.Title>Archive notes</Tooltip.Title>
+        <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+      </Tooltip>
     </div>
   )
 }
