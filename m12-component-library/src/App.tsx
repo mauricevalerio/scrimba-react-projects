@@ -191,26 +191,30 @@ export default function App() {
 
       </div>
 
-      <div>
-        <Toast status="SUCCESS">
-          <Toast.Title>Success</Toast.Title>
-          <Toast.Content>Your work has been saved</Toast.Content>
-        </Toast>
+      <div className='toast__container'>
+        <h1 className='headers'>Toast Popups</h1>
 
-        <Toast status="INFO">
-          <Toast.Title>Information</Toast.Title>
-          <Toast.Content>Please read updated information</Toast.Content>
-        </Toast>
+        <div className='toast__container--inner'>
+          <Toast status="SUCCESS">
+            <Toast.Title>Success</Toast.Title>
+            <Toast.Content>Your work has been saved</Toast.Content>
+          </Toast>
 
-        <Toast status="WARNING">
-          <Toast.Title>Warning</Toast.Title>
-          <Toast.Content>A network error was detected</Toast.Content>
-        </Toast>
+          <Toast status="INFO">
+            <Toast.Title>Information</Toast.Title>
+            <Toast.Content>Please read updated information</Toast.Content>
+          </Toast>
 
-        <Toast status="ERROR">
-          <Toast.Title>Error</Toast.Title>
-          <Toast.Content>Please re-save your work again</Toast.Content>
-        </Toast>
+          <Toast status="WARNING">
+            <Toast.Title>Warning</Toast.Title>
+            <Toast.Content>A network error was detected</Toast.Content>
+          </Toast>
+
+          <Toast status="ERROR">
+            <Toast.Title>Error</Toast.Title>
+            <Toast.Content>Please re-save your work again</Toast.Content>
+          </Toast>
+        </div>
       </div>
     </>
   )
