@@ -3,6 +3,7 @@ import Banner from './components/banners'
 import Card from './components/cards'
 import Testimonial from './components/testimonials'
 import Tooltip from './components/tooltip'
+import Toast from './components/toast'
 import { FaAccessibleIcon } from 'react-icons/fa'
 
 export default function App() {
@@ -138,6 +139,28 @@ export default function App() {
         <Tooltip.Title>Archive notes</Tooltip.Title>
         <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
       </Tooltip>
+
+      <div>
+        <Toast status="SUCCESS">
+          <Toast.Title>Success</Toast.Title>
+          <Toast.Content>Your work has been saved</Toast.Content>
+        </Toast>
+
+        <Toast status="INFO">
+          <Toast.Title>Information</Toast.Title>
+          <Toast.Content>Please read updated information</Toast.Content>
+        </Toast>
+
+        <Toast status="WARNING">
+          <Toast.Title>Warning</Toast.Title>
+          <Toast.Content>A network error was detected</Toast.Content>
+        </Toast>
+
+        <Toast status="ERROR">
+          <Toast.Title>Error</Toast.Title>
+          <Toast.Content>Please re-save your work again</Toast.Content>
+        </Toast>
+      </div>
     </div>
   )
 }
