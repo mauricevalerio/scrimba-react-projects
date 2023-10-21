@@ -36,7 +36,7 @@ export const Testimonial: React.FC<TestimonialProp> & {
                 style={{ background: `${bgColor ? bgColor : '#2545B8'}` }}>
                 {imgSrc && <img src={imgSrc} alt='Image Testimonial' className='testimonial__img' />}
 
-                <div className={`${imgSrc ? '' : 'default__image'}`}>{children}</div>
+                <div className={`${imgSrc ? '' : 'default__img'}`}>{children}</div>
             </div>
         </TestimonialContext.Provider>
     )

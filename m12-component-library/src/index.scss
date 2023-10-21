@@ -139,7 +139,9 @@ body {
 /* CARD */
 .card__container {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
+  flex-wrap: wrap;
 
   &--inner {
     display: flex;
@@ -194,6 +196,12 @@ body {
 
 /* Testimonial */
 
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
 .testimonial {
   display: flex;
   justify-content: center;
@@ -205,7 +213,7 @@ body {
   color: #FFF;
   position: relative;
 
-  .default__image {
+  .default__img {
     display: flex;
     flex-direction: column;
     align-items: center;

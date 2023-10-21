@@ -114,16 +114,26 @@ export default function App() {
         </div>
       </div>
 
-      <div className='flex__container flex__col gap padding'>
+      {/* TESTIMONIALS */}
+      <div className='testimonials__container mb'>
+        <h1 className='headers'>Testimonials</h1>
+
         <Testimonial imgSrc='./default-img.jpg'>
           <Testimonial.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. </Testimonial.Content>
           <Testimonial.Name>May Andersons</Testimonial.Name>
           <Testimonial.Role>Workcation, CTO</Testimonial.Role>
         </Testimonial>
 
+        <Testimonial bgColor='navy' imgSrc='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'>
+          <Testimonial.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. </Testimonial.Content>
+          <Testimonial.Name>John Doe</Testimonial.Name>
+          <Testimonial.Role>Accompanies, CEO</Testimonial.Role>
+        </Testimonial>
+
         <Testimonial>
           <Testimonial.Content>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. </Testimonial.Content>
           <Testimonial.Name>May Andersons</Testimonial.Name>
+          <Testimonial.Role>Workcation, CTO</Testimonial.Role>
         </Testimonial>
 
         <Testimonial bgColor='pink'>
