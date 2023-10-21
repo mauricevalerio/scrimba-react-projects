@@ -21,17 +21,31 @@ export default function App() {
 
   */
   return (
-    <div className='component__library'>
-
-      <div className='flex__container flex__wrap'>
-        <Badge color='gray' />
-        <Badge color='red' />
-        <Badge color='yellow' />
-        <Badge color='green' />
-        <Badge color='blue' />
-        <Badge color='indigo' />
-        <Badge color='purple' />
-        <Badge color='pink' />
+    <>
+      <div className='badge__container'>
+        <h1 className='badge__container--header'>Badges</h1>
+        <div className='badge__container--inner'>
+          <h3 className='badge__label'>Square</h3>
+          <Badge color='gray' />
+          <Badge color='red' />
+          <Badge color='yellow' />
+          <Badge color='green' />
+          <Badge color='blue' />
+          <Badge color='indigo' />
+          <Badge color='purple' />
+          <Badge color='pink' />
+        </div>
+        <div className='badge__container--inner'>
+          <h3 className='badge__label'>Pill</h3>
+          <Badge color='gray' shape='pill' />
+          <Badge color='red' shape='pill' />
+          <Badge color='yellow' shape='pill' />
+          <Badge color='green' shape='pill' />
+          <Badge color='blue' shape='pill' />
+          <Badge color='indigo' shape='pill' />
+          <Badge color='purple' shape='pill' />
+          <Badge color='pink' shape='pill' />
+        </div>
       </div>
 
       <div className='flex__container flex__col'>
@@ -161,7 +175,7 @@ export default function App() {
           <Toast.Content>Please re-save your work again</Toast.Content>
         </Toast>
       </div>
-    </div>
+    </>
   )
 }
 
