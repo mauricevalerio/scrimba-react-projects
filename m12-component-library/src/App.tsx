@@ -143,54 +143,53 @@ export default function App() {
         </Testimonial>
       </div>
 
-      <div className='tooltip__container'>
+      <div className='tooltip__container mb'>
+        <h1 className='headers'>Tooltip</h1>
 
-        <div className='tooltip__container__inner'>
-          <Tooltip style='BOLD' variant='NORMAL'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
-          <Tooltip style='BOLD' variant='BLUE'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
-          <Tooltip style='BOLD' variant='PINK'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
-          <Tooltip style='BOLD' variant='GREEN'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
-        </div>
+        <div className='tooltip__container--inner'>
+          <div className='tooltip__container--variant'>
+            <Tooltip style='BOLD' variant='NORMAL'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
+            <Tooltip style='BOLD' variant='BLUE'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
+            <Tooltip style='BOLD' variant='PINK'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
+            <Tooltip style='BOLD' variant='GREEN'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
+          </div>
 
-        <div className='tooltip__container__inner'>
-          <Tooltip style='LIGHT' variant='NORMAL'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
+          <div className='tooltip__container--variant'>
+            <Tooltip style='LIGHT' variant='NORMAL'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
 
-          <Tooltip style='LIGHT' variant='BLUE'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
+            <Tooltip style='LIGHT' variant='BLUE'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
 
-          <Tooltip style='LIGHT' variant='PINK'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
+            <Tooltip style='LIGHT' variant='PINK'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
 
-          <Tooltip style='LIGHT' variant='GREEN'>
-            <Tooltip.Title>Archive notes</Tooltip.Title>
-            <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-          </Tooltip>
+            <Tooltip style='LIGHT' variant='GREEN'>
+              <Tooltip.Title>Archive notes</Tooltip.Title>
+              <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
+            </Tooltip>
+          </div>
         </div>
 
       </div>
-      <Tooltip>
-        <Tooltip.Title>Archive notes</Tooltip.Title>
-        <Tooltip.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</Tooltip.Content>
-      </Tooltip>
 
       <div>
         <Toast status="SUCCESS">

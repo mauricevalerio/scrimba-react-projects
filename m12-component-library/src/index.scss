@@ -283,13 +283,20 @@ body {
   }
 }
 
+/* TOOLTIP */
+
 .tooltip__container {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   flex-wrap: wrap;
-  justify-content: center;
 
-  &__inner {
+  &--inner {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &--variant {
     display: flex;
     gap: 1rem;
     flex-direction: column;
