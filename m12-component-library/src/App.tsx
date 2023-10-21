@@ -7,25 +7,13 @@ import Toast from './components/toast'
 import { FaAccessibleIcon } from 'react-icons/fa'
 
 export default function App() {
-  /*
-    All props are optional
-      text
-        - any string
-        - default: 'badge'
-      shape
-        - 'pill' or 'square'
-        - default: 'square'
-      color
-        - gray, red, yellow, green, blue, indigo, purple, pink
-        - default: gray
-
-  */
   return (
     <>
-      <div className='badge__container'>
-        <h1 className='badge__container--header'>Badges</h1>
+      {/* BADGES */}
+      <div className='badge__container mb'>
+        <h1 className='headers'>Badges</h1>
         <div className='badge__container--inner'>
-          <h3 className='badge__label'>Square</h3>
+          <h3 className='labels'>Square</h3>
           <Badge color='gray' />
           <Badge color='red' />
           <Badge color='yellow' />
@@ -36,7 +24,7 @@ export default function App() {
           <Badge color='pink' />
         </div>
         <div className='badge__container--inner'>
-          <h3 className='badge__label'>Pill</h3>
+          <h3 className='labels'>Pill</h3>
           <Badge color='gray' shape='pill' />
           <Badge color='red' shape='pill' />
           <Badge color='yellow' shape='pill' />
@@ -48,26 +36,53 @@ export default function App() {
         </div>
       </div>
 
-      <div className='flex__container flex__col'>
-        <Banner status={'SUCCESS'}>
-          <Banner.Title>Congratulations</Banner.Title>
-          <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>
-        </Banner>
+      {/* BANNER */}
+      <div className='banner__container mb'>
+        <h1 className='headers'>Banners</h1>
 
-        <Banner status={'WARNING'}>
-          <Banner.Title>Attention</Banner.Title>
-          <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</Banner.Content>
-        </Banner>
+        <div className='banner__container--inner'>
+          <h3 className='labels'>Success</h3>
+          <Banner status={'SUCCESS'}>
+            <Banner.Title>Congratulations</Banner.Title>
+            <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>
+          </Banner>
+          <Banner status={'SUCCESS'}>
+            <Banner.Title>Congratulations</Banner.Title>
+          </Banner>
+        </div>
 
-        <Banner status={'ERROR'}>
-          <Banner.Title>There is a problem with your application</Banner.Title>
-          <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</Banner.Content>
-        </Banner>
+        <div className='banner__container--inner'>
+          <h3 className='labels'>Warning</h3>
+          <Banner status={'WARNING'}>
+            <Banner.Title>Attention</Banner.Title>
+            <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</Banner.Content>
+          </Banner>
+          <Banner status={'WARNING'}>
+            <Banner.Title>Attention</Banner.Title>
+          </Banner>
+        </div>
 
-        <Banner status={'INFO'}>
-          <Banner.Title>Update available</Banner.Title>
-          <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>
-        </Banner>
+        <div className='banner__container--inner'>
+          <h3 className='labels'>Error</h3>
+          <Banner status={'ERROR'}>
+            <Banner.Title>There is a problem with your application</Banner.Title>
+            <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam quo totam eius aperiam dolorum.</Banner.Content>
+          </Banner>
+          <Banner status={'ERROR'}>
+            <Banner.Title>There is a problem with your application</Banner.Title>
+          </Banner>
+        </div>
+
+        <div className='banner__container--inner'>
+          <h3 className='labels'>Neutral</h3>
+          <Banner status={'INFO'}>
+            <Banner.Title>Update available</Banner.Title>
+            <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>
+          </Banner>
+          <Banner status={'INFO'}>
+            <Banner.Title>Update available</Banner.Title>
+          </Banner>
+        </div>
       </div>
 
       <div className='flex__container'>
