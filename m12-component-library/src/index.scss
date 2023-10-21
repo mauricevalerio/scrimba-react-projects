@@ -137,6 +137,17 @@ body {
 }
 
 /* CARD */
+.card__container {
+  display: flex;
+  gap: 2rem;
+
+  &--inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
 
 .card {
   border-radius: 0.5rem;

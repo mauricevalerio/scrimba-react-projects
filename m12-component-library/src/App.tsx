@@ -36,7 +36,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* BANNER */}
+      {/* BANNERS */}
       <div className='banner__container mb'>
         <h1 className='headers'>Banners</h1>
 
@@ -85,20 +85,33 @@ export default function App() {
         </div>
       </div>
 
-      <div className='flex__container'>
-        <Card icon={<FaAccessibleIcon />} cardBackground='navy' titleColor='pink' contentColor='pink'>
-          <Card.Title>Easy Deployment</Card.Title>
-          <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
-        </Card>
 
-        <Card>
-          <Card.Title>Easy Deployment</Card.Title>
-          <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
-        </Card>
+      {/* CARDS */}
+      <div className='card__container mb'>
+        <h1 className='headers'>Cards</h1>
 
-        <Card>
-          <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
-        </Card>
+        <div className='card__container--inner'>
+          <h3 className='labels'>Default</h3>
+          <Card>
+            <Card.Title>Easy Deployment</Card.Title>
+            <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+          </Card>
+        </div>
+
+        <div className='card__container--inner'>
+          <h3 className='labels'>Customized</h3>
+          <Card icon={<FaAccessibleIcon />} cardBackground='navy' titleColor='yellow' contentColor='pink'>
+            <Card.Title>Easy Deployment</Card.Title>
+            <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+          </Card>
+        </div>
+
+        <div className='card__container--inner'>
+          <h3 className='labels'>No Title</h3>
+          <Card>
+            <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+          </Card>
+        </div>
       </div>
 
       <div className='flex__container flex__col gap padding'>
