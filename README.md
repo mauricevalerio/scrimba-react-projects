@@ -16,7 +16,5 @@ Not all projects are deployed.
 ## Scrimba Guided React Projects
 | Project Name | Module |
 | ----------- | ----------- |
-| [Digital Business Card](https://maurice-business-card.netlify.app/) | Module 11 |
-| [Travel Journal](https://travel-site-journal.netlify.app/) | Module 11 |
 | [Tenzies](https://tenz1es.netlify.app/) | Module 11 |
 | [Photo Ecommerce](https://photo-ecommerce.netlify.app/) | Module 12 |
