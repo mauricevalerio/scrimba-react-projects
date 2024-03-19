@@ -18,3 +18,4 @@ Collection of my solutions to [Scrimba Frontend Career Developer Path Solo Proje
 | [Business Card](https://maurice-business-card.netlify.app/) | Module 11 |
 | [Travel Journal](https://travel-site-journal.netlify.app/) | Module 11 |
 | [Quizzical](https://qu1zz1cal.netlify.app/) | Module 11 |
+| [Component Library](https://component-libraries.netlify.app/) | Module 12 |
