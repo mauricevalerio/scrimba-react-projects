@@ -1,0 +1,80 @@
+.leaderboard-modal {
+    padding: 1em;
+    position: fixed;
+    background: #f5f5f5;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80vw;
+    height: 70vh;
+    border: 1px solid #67595e;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: opacity 1s, transform 1s;
+    overflow-y: scroll;
+}
+
+.leaderboard-modal.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.sort-options {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    text-transform: uppercase;
+}
+
+.leaderboard-header,
+.leaderboard-item {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    border-bottom: 1px solid gray;
+}
+
+.leaderboard-item:last-of-type {
+    border-bottom: none;
+}
+
+/* BUTTON */
+.leaderboard-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* TYPOGRAPHY */
+.leaderboard-header {
+    text-transform: uppercase;
+}
+
+h2,
+p {
+    text-align: center;
+}
+
+.sort-options > span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.sort-options > p {
+    margin: 0;
+}
+
+@media (width >= 768px) {
+    .leaderboard-modal {
+        width: 50vw;
+    }
+
+}

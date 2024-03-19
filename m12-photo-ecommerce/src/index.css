@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap');
+
+:root {
+  --black: #150605;
+  --red: #EA453C;
+  --pink: #F47B6E;
+  --light-blue: #EFFBFE;
+  --blue: #ACE6EC;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*********** NAV ************/
+nav {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  background-color: var(--pink);
+  box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  padding: 1em;
+}
+
+nav>a {
+  text-decoration: none;
+  color: var(--light-blue);
+  font-size: 1.25rem;
+}
+
+a.active-nav-style {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+img.cart-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/*********** CART **************/
+main.cart-page {
+  padding: 1em;
+}
+
+h1.checkout {
+  text-align: center;
+  margin: 0;
+}
+
+div.cart-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.cart-page .total-cost {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+  border-color: var(--black);
+  text-align: right;
+  cursor: pointer;
+  padding: 1em;
+  transition: all .2s ease-in-out;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:disabled {
+  border-color: lightgray;
+}
+
+/********* CART ITEM **********/
+div.cart-item,
+div.cart-item-inner {
+  display: flex;
+  align-items: center;
+}
+
+div.cart-item {
+  justify-content: space-between;
+}
+
+div.cart-item-inner {
+  gap: 1em;
+}
+
+div.cart-item img.item {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 1em;
+}
+
+div.cart-item p {
+  font-size: 1.35rem;
+}
+
+img.bin-icon {
+  font-size: 1.3em;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+/********* PHOTOS **********/
+main.photos {
+  padding: 1em;
+  display: grid;
+  grid-gap: 2px;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-flow: dense;
+}
+
+/***** IMAGE COMPONENT *******/
+.image-container {
+  position: relative;
+}
+
+img.image-grid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img.favorite {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  opacity: .7;
+}
+
+img.cart {
+  color: var(--blue);
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}

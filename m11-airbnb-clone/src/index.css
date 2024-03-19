@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* NAV */
+
+nav {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  padding: 1.5em;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.airbnb-logo {
+  max-width: 100px;
+}
+
+/* HERO */
+.hero {
+  padding: 1em;
+}
+
+.hero-photo-grid {
+  max-width: 325px;
+  display: block;
+}
+
+.hero {
+  color: #222222;
+  text-align: center;
+}
+
+/* CARDS */
+.cards-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.75rem;
+  padding: 1em;
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #FFF;
+  padding: 0.25em;
+  border-radius: 2px;
+  font-weight: 700;
+
+}
+
+.card-image {
+  border-radius: 9px;
+  max-width: 180px;
+}
+
+.card-details-container {
+  display: flex;
+  gap: 5px;
+}
+
+.card-star-image {
+  max-width: 15px;
+  max-height: 15px;
+}
+
+.card-text-style {
+  line-height: 1.5;
+  color: #222222;
+}
+
+.card-description,
+.card-price {
+  margin: 0;
+}
+
+@media (min-width: 480px) {
+  .hero-photo-grid {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 576px) {
+
+  .hero-photo-grid {
+    max-width: 75%;
+  }
+
+  .hero {
+    text-align: left;
+    padding: 2em;
+  }
+
+  h1 {
+    line-height: 1.1;
+    font-size: 2.25rem;
+  }
+
+  .hero>p {
+    font-size: 1.125rem;
+    max-width: 100%;
+  }
+
+  .cards-list {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-image {
+    max-width: 250px;
+  }
+}

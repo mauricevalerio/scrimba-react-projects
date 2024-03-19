@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+/* css style for the component when no notes are detected */
+.no-notes {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* button styling when there are no notes detected */
+.first-note {
+  cursor: pointer;
+  background-color: #4a4e74;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+/*styling on the sidebar when selected*/
+.title {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1em;
+}
+
+.text-snippet {
+  padding-inline: 5px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+  color: #4a4e74;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selected-note {
+  background-color: #4a4e74;
+}
+
+.selected-note .text-snippet {
+  color: white;
+  font-weight: 700;
+}
+
+.pane {
+  overflow-y: auto;
+  /* padding: 10px; */
+}
+
+.editor {
+  width: 80%;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sidebar-header > h3 {
+  font-size: 1.75rem;
+}
+
+.new-note {
+  cursor: pointer;
+  background-color: #4a4e74;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  height: 30px;
+  width: 30px;
+}
+
+/*so that the display of the elements are side by side */
+.split {
+  display: flex;
+}
+
+/*Code for the divider of Sidebar and Editor so that it is more visible*/
+.gutter {
+  background-color: #eee;
+
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+}
+
+.gutter.gutter-horizontal:hover {
+  cursor: col-resize;
+}
+
+/*trash icon*/
+.delete-btn {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.title:hover > .delete-btn {
+  display: block;
+}
+
+.trash-icon {
+  cursor: pointer;
+}
+
+.gg-trash {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 10px;
+  height: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 2px, inset -2px 0 0, inset 2px 0 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  margin-top: 4px;
+}
+
+.gg-trash::after,
+.gg-trash::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.gg-trash::after {
+  background: currentColor;
+  border-radius: 3px;
+  width: 16px;
+  height: 2px;
+  top: -4px;
+  left: -5px;
+}
+
+.gg-trash::before {
+  width: 10px;
+  height: 4px;
+  border: 2px solid;
+  border-bottom: transparent;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  top: -7px;
+  left: -2px;
+}
